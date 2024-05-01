@@ -1,7 +1,15 @@
 /* @refresh reload */
 import { render } from "solid-js/web";
+import { Router, Route } from "@solidjs/router";
 
-import "./index.css";
-import App from "./App";
+import BarLayout from "@/app/layouts/BarLayout";
+import HomePage from "@/app/routes";
 
-render(() => <App />, document.getElementById("root") as HTMLElement);
+render(
+	() => (
+		<Router root={BarLayout}>
+			<Route path="/" component={HomePage} />
+		</Router>
+	),
+	document.getElementById("root") as HTMLElement
+);

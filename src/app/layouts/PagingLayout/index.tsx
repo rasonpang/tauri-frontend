@@ -1,6 +1,6 @@
 import styles from "./style.module.css";
 
-const Layout = (props: any) => {
+const PagingLayout = (props: any) => {
 	return (
 		<div>
 			<div class={styles.header}></div>
@@ -9,4 +9,4 @@ const Layout = (props: any) => {
 	);
 };
 
-export default Layout;
+export default PagingLayout;
