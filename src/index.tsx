@@ -8,6 +8,7 @@ import "./index.css";
 
 // Layout
 import BarLayout from "@/app/layouts/BarLayout";
+import PagingLayout from "./app/layouts/PagingLayout";
 
 // Routes configuration
 const routes = [
@@ -16,10 +17,21 @@ const routes = [
 
 render(
 	() => (
-		<Router root={BarLayout}>
-			{routes.map(({ path, component }) => (
-				<Route path={path} component={component} />
-			))}
+		<Router>
+			{/* Bar Layout */}
+			<Route path="/" component={BarLayout}>
+				{routes.map(({ path, component }) => (
+					<Route path={path} component={component} />
+				))}
+			</Route>
+
+			{/* Paging Layout */}
+			<Route path="/sign-in" component={PagingLayout}>
+				<Route
+					path="/"
+					component={lazy(() => import("@/app/routes/sign-in"))}
+				></Route>
+			</Route>
 		</Router>
 	),
 	document.getElementById("root") as HTMLElement
