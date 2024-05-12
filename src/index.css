@@ -36,6 +36,16 @@ hr {
   background-color: var(--bg-secondary);
 }
 
+div {
+  display: flex;
+  flex-direction: column;
+}
+
+span {
+  display: flex;
+  flex-direction: row;
+}
+
 .full_center {
   display: flex;
   justify-content: center;
