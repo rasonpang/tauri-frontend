@@ -1,0 +1,14 @@
+.header {
+	position: sticky;
+	top: 0;
+	transition: top .5s;
+
+	height: var(--header-height);
+	background-color: red;
+	z-index: 999;
+	
+	justify-content: center;
+}
+.header-hide {
+	top: calc(var(--header-height) * -1);
+}

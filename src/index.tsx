@@ -8,7 +8,7 @@ import "./index.css";
 
 // Layout
 import BarLayout from "@/app/layouts/BarLayout";
-import PagingLayout from "./app/layouts/PagingLayout";
+import PagingLayout from "@/app/layouts/PagingLayout";
 
 // Routes configuration
 const routes = [

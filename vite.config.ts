@@ -1,6 +1,7 @@
 import { defineConfig } from "vite";
 import solid from "vite-plugin-solid";
 import { internalIpV4 } from "internal-ip";
+import path from "path";
 
 // @ts-expect-error process is a nodejs global
 const mobile = !!/android|ios/.exec(process.env.TAURI_ENV_PLATFORM);
@@ -32,7 +33,7 @@ export default defineConfig(async () => ({
 	},
 	resolve: {
 		alias: {
-			"@": "./",
+			"@": path.resolve(__dirname, "./src"),
 		},
 	},
 }));
