@@ -19,7 +19,9 @@ const Header = () => {
 	return (
 		<div
 			class={`${styles.header} ${
-				headerVisibility() === false ? styles["header-hide"] : ""
+				headerVisibility() === false
+					? styles["header-hide"]
+					: ""
 			}`}
 		>
 			Header

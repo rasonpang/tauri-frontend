@@ -1,0 +1,13 @@
+.main {
+	display: flex;
+}
+.main > div {
+	height: 100%;
+}
+.main > div:nth-child(1) {
+	background-color: white;
+	flex-grow: 4;
+}
+.main > div:nth-child(2) {
+	flex-grow: 6;
+}

@@ -8,8 +8,8 @@
     "build": "vite build",
     "serve": "vite preview",
     "tauri": "tauri",
-    "dev": "tauri dev",
-    "dev:web": "vite",
+    "dev": "vite",
+    "dev:app": "tauri dev",
     "dev:android": "tauri android dev"
   },
   "license": "MIT",
