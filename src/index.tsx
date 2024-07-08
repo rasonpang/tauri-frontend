@@ -15,6 +15,10 @@ import PagingLayout from "@/app/layouts/PagingLayout";
 // Routes configuration
 const routes = [
 	{ path: "/", component: lazy(() => import("@/app/routes/index")) },
+	{
+		path: "/resume",
+		component: lazy(() => import("@/app/routes/resume/index")),
+	},
 ];
 
 render(

@@ -1,0 +1,27 @@
+.container {
+	display: flex;
+	flex-direction: column;
+}
+
+.wrapper {
+	background-color: rgba(255, 255, 255, 0.05);
+	box-shadow: 0 0 2.5rem rgba(11, 43, 11);
+
+	border: 1px solid rgb(0, 56, 0);
+	border-radius: 0.5rem;
+
+	width: 100%;
+	max-width: 800px;
+	height: 90vh;
+	padding: 1rem;
+}
+
+.picture {
+	width: 20%;
+	border-radius: 2.5rem;
+	overflow: hidden;
+}
+.picture > img {
+	filter: hue-rotate(30deg);
+	user-select: none;
+}
