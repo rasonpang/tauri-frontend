@@ -1,3 +1,4 @@
+import Title from "@/app/components/Title";
 import styles from "./style.module.css";
 
 const ResumePage = () => {
@@ -6,15 +7,20 @@ const ResumePage = () => {
 			<section class="all-center">
 				<div class={styles.wrapper}>
 					<div>
-						<div>Character Details</div>
+						<Title>Character Details</Title>
+
 						<div class={styles.picture}>
-							<img src="me.jpg" />
+							{/* <img src="me.jpg" /> */}
 						</div>
 					</div>
 
 					<div>
-						<div>Skills</div>
+						<Title>Skills</Title>
 						<div>JS</div>
+					</div>
+
+					<div>
+						<Title>Experience</Title>
 					</div>
 				</div>
 			</section>

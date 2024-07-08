@@ -1,0 +1,36 @@
+.title {
+	--space: 0.75rem;
+	--border-size: 2.5px;
+	--border: var(--border-size) solid var(--text-color);
+	--border-radius: 1rem;
+
+	padding: var(--space);
+	padding-bottom: 0;
+
+	position: relative;
+	width: max-content;
+	color: var(--text-color);
+	font-weight: 700;
+}
+.title::before {
+	position: absolute;
+	content: "";
+
+	top: 0;
+	left: 0;
+
+	width: 100%;
+	border: var(--border);
+	border-radius: var(--border-radius);
+}
+.title::after {
+	position: absolute;
+	content: "";
+
+	top: 0;
+	right: calc(var(--border-size) * -2);
+
+	height: 100%;
+	border: var(--border);
+	border-radius: var(--border-radius);
+}
