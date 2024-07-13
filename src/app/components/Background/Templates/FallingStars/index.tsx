@@ -63,13 +63,12 @@ const FallingStars = () => {
 
 	// CORE_LOGICS
 	function initStars() {
-		let initialStars: any = [];
-		for (let i = 0; i < 20; i++) {
+		const initialStars: any = Array.from({ length: 20 }, () => {
 			const direction =
 				Math.random() < 0.5
 					? "leftToRight"
 					: "rightToLeft";
-			initialStars.push({
+			return {
 				x:
 					direction === "leftToRight"
 						? Math.random() *
@@ -81,57 +80,63 @@ const FallingStars = () => {
 								0.5,
 				y: Math.random() * canvas.height * -0.5,
 				speed: Math.random() * 2 + 1,
-				direction: direction,
-			});
-		}
+				rotation: Math.random() * 360,
+				direction,
+			};
+		});
 		setStars(initialStars);
 	}
 
 	function controller() {
 		ctx.clearRect(0, 0, canvas.width, canvas.height);
-		let newStars: any = stars().map((star: any) => {
-			let newX = star.x;
-			let newY = star.y + star.speed;
+		const newStars: any = stars().map((star: any) => {
+			const newY = star.y + star.speed;
+			const newX =
+				star.direction === "leftToRight"
+					? star.x + star.speed
+					: star.x - star.speed;
+			const newRotation: any = star.rotation + 2; // Adjust rotation speed as needed
 
-			if (star.direction === "leftToRight") {
-				newX = star.x + star.speed;
-				if (
-					newX > canvas.width ||
-					newY > canvas.height
-				) {
-					newX =
-						Math.random() *
-						canvas.width *
-						0.5;
-					newY =
-						Math.random() *
-						canvas.height *
-						-0.5;
-				}
-			} else {
-				newX = star.x - star.speed;
-				if (newX < 0 || newY > canvas.height) {
-					newX =
-						canvas.width * 0.5 +
-						Math.random() *
-							canvas.width *
-							0.5;
-					newY =
-						Math.random() *
-						canvas.height *
-						-0.5;
-				}
+			if (
+				newY > canvas.height ||
+				newX > canvas.width ||
+				newX < 0
+			) {
+				const direction = star.direction;
+				return {
+					x:
+						direction === "leftToRight"
+							? Math.random() *
+							  canvas.width *
+							  0.5
+							: canvas.width * 0.5 +
+							  Math.random() *
+									canvas.width *
+									0.5,
+					y: Math.random() * canvas.height * -0.5,
+					speed: star.speed,
+					rotation: Math.random() * 360,
+					direction,
+				};
 			}
-
-			drawStar(newX, newY);
-			return { ...star, x: newX, y: newY };
+			drawStar(newX, newY, newRotation);
+			return {
+				...star,
+				x: newX,
+				y: newY,
+				rotation: newRotation,
+			};
 		});
 		setStars(newStars);
 		requestAnimationFrame(controller);
 	}
 
-	const drawStar = (x: number, y: number) => {
-		ctx.drawImage(assets.star, x, y, 50, 50);
+	const drawStar = (x: number, y: number, rotation: number) => {
+		ctx.save();
+		ctx.translate(x + 25, y + 25); // Move the center of rotation to the center of the star
+		ctx.rotate((rotation * Math.PI) / 180);
+		ctx.drawImage(assets.star, -25, -25, 50, 50); // Draw the star with its center at the origin
+		ctx.restore();
 	};
 
 	const styles: any = {
