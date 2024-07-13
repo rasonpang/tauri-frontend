@@ -1,36 +1,13 @@
 .title {
-	--space: 0.75rem;
-	--border-size: 2.5px;
-	--border: var(--border-size) solid var(--text-color);
-	--border-radius: 1rem;
-
-	padding: var(--space);
-	padding-bottom: 0;
-
-	position: relative;
+	font-family: "Courier New", Courier, monospace;
 	width: max-content;
-	color: var(--text-color);
-	font-weight: 700;
-}
-.title::before {
-	position: absolute;
-	content: "";
 
-	top: 0;
-	left: 0;
+	font-weight: 900;
+	padding: 0.5rem 1rem;
+	border-radius: 0.5rem;
 
-	width: 100%;
-	border: var(--border);
-	border-radius: var(--border-radius);
-}
-.title::after {
-	position: absolute;
-	content: "";
+	color: rgb(0, 0, 0);
+	background-color: rgb(255, 255, 255);
 
-	top: 0;
-	right: calc(var(--border-size) * -2);
-
-	height: 100%;
-	border: var(--border);
-	border-radius: var(--border-radius);
+	box-shadow: 0.1rem 0.1rem 0.3rem rgba(255, 255, 255, 0.5);
 }

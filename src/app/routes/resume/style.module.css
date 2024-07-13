@@ -7,14 +7,14 @@
 }
 
 .wrapper {
-	background-color: rgba(255, 255, 255, 0.05);
+	background-color: rgba(25, 25, 25, 0.9);
 	box-shadow: 0 0 2.5rem var(--color);
 
 	border: 1px solid var(--color);
 	border-radius: 0.5rem;
 
-	width: 100%;
-	max-width: 800px;
+	width: 90%;
+	max-width: 768px;
 	height: 90vh;
 	padding: 1rem;
 }
@@ -25,6 +25,11 @@
 	overflow: hidden;
 }
 .picture > img {
-	filter: hue-rotate(30deg);
 	user-select: none;
+}
+
+@media only screen and (min-width: 768px) {
+	.wrapper {
+		width: 100%;
+	}
 }
