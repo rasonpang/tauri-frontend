@@ -1,25 +1,36 @@
+/* Center */
 .all-center {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
-
 .x-center {
 	display: flex;
 	justify-content: center;
 }
-
 .y-center {
 	display: flex;
 	align-items: center;
 }
 
+/* Direction */
 .row {
 	display: flex;
 	flex-direction: row;
 }
-
 .col {
 	display: flex;
 	flex-direction: column;
+}
+
+/* Size Fit */
+.all-fit {
+	width: 100%;
+	height: 100%;
+}
+.x-fit {
+	width: 100%;
+}
+.y-fit {
+	height: 100%;
 }

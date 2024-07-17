@@ -1,0 +1,15 @@
+/* Slide */
+.slide-in {
+	animation: slide-in 2s;
+	animation-iteration-count: 1;
+}
+
+@keyframes slide-in {
+	0% {
+		margin-left: 100vw;
+	}
+
+	100% {
+		margin-left: 0;
+	}
+}

@@ -6,6 +6,7 @@ import { Router, Route } from "@solidjs/router";
 // Global CSS
 import "./app/assets/css/global.css";
 import "./app/assets/css/custom.css";
+import "./app/assets/css/animation.css";
 
 // Layout
 import BlankLayout from "@/app/layouts/BlankLayout";

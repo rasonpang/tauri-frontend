@@ -19,6 +19,8 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 	background-color: var(--bg-primary);
 	color: var(--color-primary);
+
+	max-width: 1920px;
 }
 
 code {
