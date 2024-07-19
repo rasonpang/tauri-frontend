@@ -12,12 +12,6 @@
 	padding: 1rem;
 }
 
-@media only screen and (min-width: var(--breakpoint-desktop)) {
-	.container {
-		width: 100%;
-	}
-}
-
 @keyframes breathe-glow {
 	0% {
 		box-shadow: 0 0 2.5rem var(--color);

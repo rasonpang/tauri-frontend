@@ -1,7 +1,7 @@
 .container {
 	width: 100%;
 	overflow: hidden;
-	box-shadow: 0 0 0.5rem 0.1rem rgba(255, 255, 255, 0.3);
+	box-shadow: 0 0 0.5rem 0.1rem var(--box-shadox-color);
 }
 
 .wrapper {

@@ -15,9 +15,10 @@ const Profile = () => {
 	});
 
 	return (
-		<PanelContainer glowColor="rgba(100, 50, 50, 0.5)">
+		<PanelContainer glowColor="rgba(0, 0, 200, 0.5)">
 			<div class={styles.container}>
-				<div id={styles.name}>Pang Sheng Wei</div>
+				<u id={styles.name}>Pang Sheng Wei</u>
+				<div>123</div>
 			</div>
 		</PanelContainer>
 	);
