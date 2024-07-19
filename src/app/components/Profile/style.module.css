@@ -10,3 +10,12 @@
 .wrapper {
 	width: 70%;
 }
+
+#name {
+	font-family: "Cinzel", serif;
+	font-optical-sizing: auto;
+	font-weight: 600;
+	font-size: 2.5rem;
+	font-style: normal;
+	text-align: center;
+}

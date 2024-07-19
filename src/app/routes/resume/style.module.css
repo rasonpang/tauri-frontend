@@ -12,3 +12,35 @@
 .picture > img {
 	user-select: none;
 }
+
+/* Marquees */
+.marquee {
+	font-family: "Permanent Marker", cursive;
+	font-weight: 400;
+	font-style: normal;
+	font-size: 2rem;
+
+	background-color: white;
+	color: black;
+}
+#marquee_1 {
+	position: absolute;
+	top: 2vh;
+	right: -10vw;
+	width: 110vw;
+	transform: rotate(9deg);
+}
+#marquee_2 {
+	position: absolute;
+	top: 60%;
+	right: -50vw;
+	width: 200vw;
+	transform: rotate(150deg);
+}
+#marquee_3 {
+	position: absolute;
+	bottom: 0;
+	right: -5vw;
+	width: 105vw;
+	transform: rotate(-5deg);
+}

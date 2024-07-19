@@ -1,19 +1,18 @@
 .container {
-	--color: rgb(0, 56, 0);
-
 	background-color: rgba(25, 25, 25, 0.98);
+	backdrop-filter: blur(1.5rem);
 	animation: breathe-glow 3s ease-in-out infinite;
 
 	border: 1px solid var(--color);
 	border-radius: 0.5rem;
 
 	width: 90%;
-	max-width: 768px;
+	max-width: var(--breakpoint-desktop);
 	height: 90vh;
 	padding: 1rem;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: var(--breakpoint-desktop)) {
 	.container {
 		width: 100%;
 	}

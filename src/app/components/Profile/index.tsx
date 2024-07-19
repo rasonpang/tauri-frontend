@@ -2,7 +2,7 @@ import { loadAssets } from "@/data/helpers/preload";
 import { onMount } from "solid-js";
 
 import styles from "./style.module.css";
-import PictureFrame from "../PictureFrame";
+import PanelContainer from "../Container/PanelContainer";
 
 const Profile = () => {
 	let assets: any = {
@@ -15,34 +15,11 @@ const Profile = () => {
 	});
 
 	return (
-		<div class={`${styles.container} all-center`}>
-			<div class="row all-fit">
-				<div class={styles.sidebar}>
-					<div
-						class="row y-center"
-						style={{ gap: "20px" }}
-					>
-						<div>
-							<PictureFrame
-								src={
-									assets.frame
-								}
-							>
-								<img
-									src={
-										assets.me
-									}
-								/>
-							</PictureFrame>
-						</div>
-						<div>
-							<h2>Pang Sheng Wei</h2>
-						</div>
-					</div>
-				</div>
-				<div class={styles.wrapper}>123</div>
+		<PanelContainer glowColor="rgba(100, 50, 50, 0.5)">
+			<div class={styles.container}>
+				<div id={styles.name}>Pang Sheng Wei</div>
 			</div>
-		</div>
+		</PanelContainer>
 	);
 };
 

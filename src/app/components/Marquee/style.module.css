@@ -1,5 +1,20 @@
 .container {
-	display: flex;
-	flex-direction: row;
-	gap: 1rem;
+	width: 100%;
+	overflow: hidden;
+	box-shadow: 0 0 0.5rem 0.1rem rgba(255, 255, 255, 0.3);
+}
+
+.wrapper {
+	gap: var(--gap);
+	animation: infinite-loop linear 8s infinite;
+}
+
+@keyframes infinite-loop {
+	0% {
+		transform: translateX(0);
+	}
+
+	100% {
+		transform: translateX(var(--translate-end));
+	}
 }

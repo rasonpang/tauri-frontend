@@ -1,14 +1,14 @@
 /* Center */
-.all-center {
+.center {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
-.x-center {
+.center-x {
 	display: flex;
 	justify-content: center;
 }
-.y-center {
+.center-y {
 	display: flex;
 	align-items: center;
 }
@@ -24,13 +24,18 @@
 }
 
 /* Size Fit */
-.all-fit {
+.fit {
 	width: 100%;
 	height: 100%;
 }
-.x-fit {
+.fit-x {
 	width: 100%;
 }
-.y-fit {
+.fit-y {
 	height: 100%;
+}
+
+/* Overflow */
+.overflow-hidden {
+	overflow: hidden;
 }

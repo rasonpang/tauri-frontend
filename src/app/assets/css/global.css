@@ -8,6 +8,9 @@
 	--color-secondary: #000000;
 
 	--header-height: 3em;
+
+	/* Breakpoints */
+	--breakpoint-desktop: 768px;
 }
 
 body {
@@ -30,7 +33,7 @@ code {
 
 section {
 	width: 100vw;
-	height: 100vh;
+	height: calc(100vh + 1px);
 }
 
 a {

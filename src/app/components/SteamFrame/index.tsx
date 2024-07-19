@@ -1,11 +1,11 @@
 import styles from "./style.module.css";
 
-const PictureFrame = (props: any) => {
+const SteamFrame = (props: any) => {
 	const size = props.size ? props.size + "px" : "200px";
 
 	return (
 		<div
-			class={`${styles.container} all-center`}
+			class={`${styles.container} center`}
 			style={`width: ${size}; height: ${size};`}
 		>
 			<img class={styles.frame} src={props.src}></img>
@@ -14,4 +14,4 @@ const PictureFrame = (props: any) => {
 	);
 };
 
-export default PictureFrame;
+export default SteamFrame;
