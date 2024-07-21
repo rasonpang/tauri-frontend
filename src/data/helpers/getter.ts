@@ -65,3 +65,16 @@ export const set = <T>(
 
 	return obj;
 };
+
+export function findLastIndexByKey<T>(
+	array: T[],
+	key: keyof T,
+	value: any
+): number {
+	for (let i = array.length - 1; i >= 0; i--) {
+		if (array[i][key] === value) {
+			return i;
+		}
+	}
+	return -1; // Return -1 if no matching element is found
+}

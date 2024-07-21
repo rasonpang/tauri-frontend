@@ -19,3 +19,9 @@
 	font-style: normal;
 	text-align: center;
 }
+
+.skill_logo {
+	--size: 25px;
+	width: var(--size);
+	height: var(--size);
+}

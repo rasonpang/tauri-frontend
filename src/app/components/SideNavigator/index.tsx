@@ -15,13 +15,20 @@ const SideNavigator = (props: Props) => {
 		<div class={styles.container}>
 			{props.list.map((item: NavigateItem) => {
 				return (
-					<abbr
+					<div
 						class={styles.navigate_btn}
 						onClick={() => {
 							redirect(item);
 						}}
-						title={item.name}
-					></abbr>
+					>
+						<div
+							class={
+								styles.navigate_btn_name
+							}
+						>
+							{item.name}
+						</div>
+					</div>
 				);
 			})}
 		</div>

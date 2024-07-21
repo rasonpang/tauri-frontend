@@ -5,12 +5,13 @@
 }
 
 .side_navigator {
+	display: flex;
 	position: fixed;
-	right: 1.5rem;
 
-	display: none;
-	justify-content: center;
-	height: 100vh;
+	align-items: center;
+	bottom: 1.5rem;
+	width: 100%;
+
 	z-index: 500;
 }
 
@@ -23,6 +24,15 @@
 	user-select: none;
 }
 
+.quotes {
+	font-size: 3rem;
+	border-radius: 1rem;
+	padding: 0 1rem;
+
+	background-color: rgba(0, 0, 0, 0.5);
+	box-shadow: 0 0 1rem 0 black;
+}
+
 /* Marquees */
 .marquee {
 	font-family: "Permanent Marker", cursive;
@@ -31,6 +41,7 @@
 	font-size: 2rem;
 
 	background-color: rgb(216, 214, 116);
+	transition: all 1s;
 	color: black;
 }
 #marquee_1 {
@@ -55,8 +66,25 @@
 	transform: rotate(-5deg);
 }
 
+/* Sections */
+.first_section_bg {
+	background-image: url(https://images.wallpapersden.com/image/download/mesmerizing-night-landscape_bGxnZ2uUmZqaraWkpJRmbmdlrWZlbWU.jpg);
+	background-size: auto 100%;
+	background-repeat: no-repeat;
+}
+
 @media only screen and (min-width: 1000px) {
 	.side_navigator {
-		display: flex;
+		right: 1.5rem;
+		align-items: normal;
+		justify-content: center;
+		bottom: 0;
+		width: unset;
+		height: 100%;
+	}
+}
+@media only screen and (min-width: 1300px) {
+	#marquee_2 {
+		transform: rotate(165deg);
 	}
 }

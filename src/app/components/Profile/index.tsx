@@ -1,26 +1,69 @@
-import { loadAssets } from "@/data/helpers/preload";
-import { onMount } from "solid-js";
-
 import styles from "./style.module.css";
-import PanelContainer from "../Container/PanelContainer";
 
 const Profile = () => {
-	let assets: any = {
-		frame: "https://cdn.akamai.steamstatic.com/steamcommunity/public/images/items/1098340/71f42ec23a7f80c365f0c3900a6e61bdc78733d7.png",
-		me: "me.png",
+	// Soft Skill
+	const softSkillList = [
+		"Time Management",
+		"Communication",
+		"Problem Solving",
+		"Adaptability",
+		"Team Work",
+	];
+
+	// Technical Skill
+	const skillLogoPath = "logos/programming/";
+	const skillLogoList = [
+		"go.svg",
+		"js.svg",
+		"php.svg",
+		"python.svg",
+		"ts.svg",
+	];
+
+	// Languages
+	const languages = {
+		english: 10,
+		chinese: 10,
+		melayu: 6,
 	};
 
-	onMount(async () => {
-		assets = await loadAssets(assets);
-	});
-
 	return (
-		<PanelContainer glowColor="rgba(0, 0, 200, 0.5)">
-			<div class={styles.container}>
-				<u id={styles.name}>Pang Sheng Wei</u>
-				<div>123</div>
+		<div class={styles.container}>
+			<u id={styles.name}>Pang Sheng Wei</u>
+
+			{/* Phone */}
+			<div class="row center-y" style="gap: 1rem;">
+				<img
+					src="logos/general/phone.svg"
+					width={30}
+					height={30}
+				></img>
+				<a href="tel:0105016651">+6010-5016651</a>
 			</div>
-		</PanelContainer>
+
+			{/* Email */}
+			<div class="row center-y" style="gap: 1rem;">
+				<img
+					src="logos/general/email.svg"
+					width={30}
+					height={30}
+				></img>
+				<a href="mailto:pangshengwei99.work@gmail.com">
+					pangshengwei99.work@gmail.com
+				</a>
+			</div>
+
+			{/* Skills */}
+			<div>
+				<div>Skills</div>
+				{skillLogoList.map((path) => (
+					<img
+						class={styles.skill_logo}
+						src={skillLogoPath + path}
+					/>
+				))}
+			</div>
+		</div>
 	);
 };
 
