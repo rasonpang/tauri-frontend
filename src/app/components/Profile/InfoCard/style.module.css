@@ -1,0 +1,77 @@
+.container {
+	height: 100%;
+	padding: 2rem;
+
+	flex-direction: column;
+}
+
+.wrapper_left {
+	width: 100%;
+	justify-content: end;
+}
+.wrapper_right {
+	width: 100%;
+	align-items: end;
+	justify-content: space-between;
+}
+.wrapper_right > .corner {
+	height: 10%;
+}
+
+#card_title {
+	color: gold;
+	font-size: 1.5rem;
+	font-weight: 600;
+}
+
+#role {
+	width: 100%;
+	text-align: end;
+}
+#role > hr {
+	width: 100%;
+	border: 1px solid white;
+}
+
+#card_chip {
+	margin-bottom: 2rem;
+}
+#card_chip > img {
+	cursor: pointer;
+	width: 30%;
+	background-color: gold;
+	border-radius: 1rem;
+}
+#name {
+	font-family: "Cinzel", serif;
+	font-optical-sizing: auto;
+	font-weight: 600;
+	font-size: 2rem;
+	font-style: normal;
+	text-align: center;
+
+	margin-bottom: 2rem;
+}
+#working_since {
+	gap: 1rem;
+}
+#working_since > #title {
+	color: gold;
+	font-size: 0.7rem;
+	font-weight: bolder;
+}
+#working_since > #date {
+	font-size: 1.75rem;
+}
+
+@media only screen and (min-width: 700px) {
+	.container {
+		flex-direction: row;
+	}
+	.wrapper_left {
+		width: 50%;
+	}
+	.wrapper_right {
+		width: 50%;
+	}
+}

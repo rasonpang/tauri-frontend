@@ -66,11 +66,50 @@
 	transform: rotate(-5deg);
 }
 
-/* Sections */
+/* Stars */
+#stars {
+	position: absolute;
+	top: 10vh;
+	left: 10vw;
+}
+#stars_2 {
+	position: absolute;
+	bottom: 10vh;
+	right: 10vw;
+}
+.stars > img {
+	--star-size: 20vw;
+	--max-star-size: 200px;
+
+	width: var(--star-size);
+	height: var(--star-size);
+
+	max-width: var(--max-star-size);
+	max-height: var(--max-star-size);
+
+	animation: star-rolling 2s infinite;
+}
+@keyframes star-rolling {
+	0% {
+		rotate: 0deg;
+	}
+	50% {
+		rotate: 45deg;
+	}
+	100% {
+		rotate: 90deg;
+	}
+}
+
 .first_section_bg {
-	background-image: url(https://images.wallpapersden.com/image/download/mesmerizing-night-landscape_bGxnZ2uUmZqaraWkpJRmbmdlrWZlbWU.jpg);
-	background-size: auto 100%;
-	background-repeat: no-repeat;
+	background-image: linear-gradient(
+		to right,
+		rgba(255, 255, 255, 0.1) 0%,
+		rgba(255, 255, 255, 0) 5%,
+		rgba(255, 255, 255, 0) 95%,
+		rgba(255, 255, 255, 0.1) 100%
+	);
+	background-attachment: fixed;
 }
 
 @media only screen and (min-width: 1000px) {

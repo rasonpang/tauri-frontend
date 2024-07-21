@@ -6,7 +6,7 @@ const FallingStars = () => {
 
 	// ASSETS
 	let assets: any = {
-		star: "star.png",
+		star: "logos/general/star.png",
 	};
 
 	const [stars, setStars] = createSignal([]);

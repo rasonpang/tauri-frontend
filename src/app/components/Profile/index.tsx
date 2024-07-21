@@ -1,3 +1,5 @@
+import TiltCard from "../Container/TiltCard";
+import InfoCard from "./InfoCard";
 import styles from "./style.module.css";
 
 const Profile = () => {
@@ -29,28 +31,11 @@ const Profile = () => {
 
 	return (
 		<div class={styles.container}>
-			<u id={styles.name}>Pang Sheng Wei</u>
-
-			{/* Phone */}
-			<div class="row center-y" style="gap: 1rem;">
-				<img
-					src="logos/general/phone.svg"
-					width={30}
-					height={30}
-				></img>
-				<a href="tel:0105016651">+6010-5016651</a>
-			</div>
-
-			{/* Email */}
-			<div class="row center-y" style="gap: 1rem;">
-				<img
-					src="logos/general/email.svg"
-					width={30}
-					height={30}
-				></img>
-				<a href="mailto:pangshengwei99.work@gmail.com">
-					pangshengwei99.work@gmail.com
-				</a>
+			{/* Information Card */}
+			<div class="center" style="margin: 2rem 0;">
+				<TiltCard class={styles.info_card}>
+					<InfoCard />
+				</TiltCard>
 			</div>
 
 			{/* Skills */}

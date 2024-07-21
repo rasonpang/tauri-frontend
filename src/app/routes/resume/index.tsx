@@ -45,6 +45,25 @@ const ResumePage = () => {
 				class="center overflow-hidden"
 			>
 				<Background class={styles.first_section_bg}>
+					{/* Stars */}
+					<div
+						id={styles.stars}
+						class={styles.stars}
+					>
+						<img src="shapes/star.svg" />
+						<img src="shapes/star.svg" />
+						<img src="shapes/star.svg" />
+					</div>
+					<div
+						id={styles.stars_2}
+						class={styles.stars}
+					>
+						<img src="shapes/star.svg" />
+						<img src="shapes/star.svg" />
+						<img src="shapes/star.svg" />
+					</div>
+
+					{/* Marques */}
 					<div
 						id={styles.marquee_1}
 						class={styles.marquee}
