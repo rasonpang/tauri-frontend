@@ -33,6 +33,7 @@
 	cursor: pointer;
 	width: 6vh;
 	background-color: gold;
+	border: 0.2rem solid rgb(255, 247, 202);
 	border-radius: 1rem;
 }
 #name {

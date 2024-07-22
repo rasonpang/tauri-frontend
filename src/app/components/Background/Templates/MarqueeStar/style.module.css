@@ -1,29 +1,19 @@
 .first_section_bg {
-	background-image: linear-gradient(
-		to right,
-		rgba(255, 255, 255, 0.1) 0%,
-		rgba(255, 255, 255, 0) 5%,
-		rgba(255, 255, 255, 0) 95%,
-		rgba(255, 255, 255, 0.1) 100%
-	);
 	background-attachment: fixed;
 }
 
 /* Stars */
 #stars {
 	position: absolute;
-	top: 10vh;
-	left: 10vw;
+	top: 10%;
+	left: 10%;
 }
 #stars_2 {
 	position: absolute;
-	bottom: 10vh;
-	right: 10vw;
+	bottom: 10%;
+	right: 10%;
 }
 .stars > img {
-	--star-size: 20vw;
-	--max-star-size: 200px;
-
 	width: var(--star-size);
 	height: var(--star-size);
 

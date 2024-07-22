@@ -1,3 +1,4 @@
+import CircularProgressBar from "../CircularProgressBar";
 import TiltCard from "../Container/TiltCard";
 import InfoCard from "./InfoCard";
 import styles from "./style.module.css";
@@ -39,10 +40,12 @@ const Profile = () => {
 			{/* Skills */}
 			<div>
 				<div>Skills</div>
+
 				{skillLogoList.map((path) => (
-					<img
-						class={styles.skill_logo}
-						src={skillLogoPath + path}
+					<CircularProgressBar
+						value={80}
+						max={100}
+						iconSrc={skillLogoPath + path}
 					/>
 				))}
 			</div>

@@ -1,17 +1,26 @@
+import MarqueeStarBackground from "../../Background/Templates/MarqueeStar";
 import TiltCard from "../../Container/TiltCard";
 import styles from "./style.module.css";
 
 const InfoCard = () => {
+	const me = {
+		name: "Pang Sheng Wei",
+		workingSince: "05/19",
+	};
+
 	return (
 		<TiltCard class={styles.info_card}>
+			<MarqueeStarBackground
+				hideMarquee={true}
+				backgroundImage="transparent"
+				starSize="70px"
+			/>
 			<div class={`${styles.container}`}>
 				<div class={styles.wrapper_left}>
 					<span id={styles.card_chip}>
 						<img src="shapes/creditcard.svg"></img>
 					</span>
-					<span id={styles.name}>
-						Pang Sheng Wei
-					</span>
+					<span id={styles.name}>{me.name}</span>
 					<span
 						id={`${styles.working_since}`}
 						class="center-y"
@@ -20,7 +29,7 @@ const InfoCard = () => {
 							WORKING SINCE
 						</span>
 						<span id={styles.date}>
-							05/19
+							{me.workingSince}
 						</span>
 					</span>
 				</div>
