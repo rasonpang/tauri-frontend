@@ -1,6 +1,7 @@
 .container {
 	width: 100%;
 	height: 100%;
+	background-color: rgb(32, 32, 32);
 }
 
 .sidebar {
@@ -15,21 +16,4 @@
 	--size: 25px;
 	width: var(--size);
 	height: var(--size);
-}
-
-/* Information */
-.info_card {
-	width: 95vw;
-	max-width: 720px;
-	height: 50vh;
-	max-height: 400px;
-
-	background-color: rgb(8, 8, 8);
-	border-radius: 1rem;
-}
-
-@media only screen and (min-width: 800px) {
-	.info_card {
-		height: 50vw;
-	}
 }

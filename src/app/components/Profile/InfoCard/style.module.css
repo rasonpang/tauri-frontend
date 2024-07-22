@@ -1,16 +1,65 @@
-.container {
-	height: 100%;
-	padding: 2rem;
+/* Information */
+.info_card {
+	width: 95vw;
+	max-width: 640px;
+	height: 30vh;
+	max-height: 350px;
 
-	flex-direction: column;
+	background-color: rgb(8, 8, 8);
+	border: 1px solid gold;
+	border-radius: 1rem;
+	box-shadow: 0 0 0.5rem 0.3rem rgba(0, 0, 0, 0.3);
 }
 
+.container {
+	--spacing: 32px;
+
+	height: 100%;
+	padding: var(--spacing);
+
+	flex-direction: row;
+	font-size: 0.5em;
+}
+
+/* Wrapper Left */
 .wrapper_left {
-	width: 100%;
+	width: 50%;
 	justify-content: end;
 }
+#card_chip {
+	margin-bottom: var(--spacing);
+}
+#card_chip > img {
+	cursor: pointer;
+	width: 6vh;
+	background-color: gold;
+	border-radius: 1rem;
+}
+#name {
+	font-family: "Cinzel", serif;
+	font-optical-sizing: auto;
+	font-weight: 600;
+	font-size: 2em;
+	font-style: normal;
+	text-align: center;
+
+	margin-bottom: var(--spacing);
+}
+#working_since {
+	gap: calc(var(--spacing) / 2);
+}
+#working_since > #title {
+	color: gold;
+	font-size: 1.2em;
+	font-weight: bolder;
+}
+#working_since > #date {
+	font-size: 2em;
+}
+
+/* Wrapper Right */
 .wrapper_right {
-	width: 100%;
+	width: 50%;
 	align-items: end;
 	justify-content: space-between;
 }
@@ -23,7 +72,6 @@
 	font-size: 1.5rem;
 	font-weight: 600;
 }
-
 #role {
 	width: 100%;
 	text-align: end;
@@ -33,47 +81,19 @@
 	border: 1px solid white;
 }
 
-#card_chip {
-	margin-bottom: 2rem;
-}
-#card_chip > img {
-	cursor: pointer;
-	width: 30%;
-	background-color: gold;
-	border-radius: 1rem;
-}
-#name {
-	font-family: "Cinzel", serif;
-	font-optical-sizing: auto;
-	font-weight: 600;
-	font-size: 2rem;
-	font-style: normal;
-	text-align: center;
-
-	margin-bottom: 2rem;
-}
-#working_since {
-	gap: 1rem;
-}
-#working_since > #title {
-	color: gold;
-	font-size: 0.7rem;
-	font-weight: bolder;
-}
-#working_since > #date {
-	font-size: 1.75rem;
-}
-
-@media only screen and (min-width: 700px) {
+@media only screen and (min-width: 640px) {
 	.container {
-		flex-direction: row;
+		font-size: 0.8em;
 	}
-	.wrapper_left {
-		width: 50%;
+	.info_card {
+		height: 50vw;
 	}
-	.wrapper_right {
-		width: 50%;
+	#card_chip > img {
+		width: 27.5%;
 	}
 }
-
-/* Work on Mobile */
+@media only screen and (min-width: 1024px) {
+	.container {
+		font-size: 0.8em;
+	}
+}

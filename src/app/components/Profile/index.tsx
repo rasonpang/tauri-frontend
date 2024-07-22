@@ -33,9 +33,7 @@ const Profile = () => {
 		<div class={styles.container}>
 			{/* Information Card */}
 			<div class="center" style="margin: 2rem 0;">
-				<TiltCard class={styles.info_card}>
-					<InfoCard />
-				</TiltCard>
+				<InfoCard />
 			</div>
 
 			{/* Skills */}
