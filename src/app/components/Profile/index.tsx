@@ -1,53 +1,29 @@
-import CircularProgressBar from "../CircularProgressBar";
-import TiltCard from "../Container/TiltCard";
+import LanguageCardGrid from "./LanguageCardGrid";
 import InfoCard from "./InfoCard";
 import styles from "./style.module.css";
 
+import me from "@/data/constants/me.json";
+import FallingStars from "../Background/Templates/FallingStars";
+import Background from "../Background";
+
 const Profile = () => {
-	// Soft Skill
-	const softSkillList = [
-		"Time Management",
-		"Communication",
-		"Problem Solving",
-		"Adaptability",
-		"Team Work",
-	];
-
-	// Technical Skill
-	const skillLogoPath = "logos/programming/";
-	const skillLogoList = [
-		"go.svg",
-		"js.svg",
-		"php.svg",
-		"python.svg",
-		"ts.svg",
-	];
-
-	// Languages
-	const languages = {
-		english: 10,
-		chinese: 10,
-		melayu: 6,
-	};
+	const programmingLanguages = me.programming_languages;
 
 	return (
-		<div class={styles.container}>
+		<div class={`${styles.container} column center-x`}>
+			<Background style="background-color: rgb(4, 0, 24);">
+				<FallingStars />
+			</Background>
 			{/* Information Card */}
 			<div class="center" style="margin: 2rem 0;">
 				<InfoCard />
 			</div>
 
 			{/* Skills */}
-			<div>
-				<div>Skills</div>
-
-				{skillLogoList.map((path) => (
-					<CircularProgressBar
-						value={80}
-						max={100}
-						iconSrc={skillLogoPath + path}
-					/>
-				))}
+			<div class="center">
+				<LanguageCardGrid
+					languages={programmingLanguages}
+				/>
 			</div>
 		</div>
 	);

@@ -1,0 +1,42 @@
+.container {
+	width: calc(100% - 4rem);
+	max-width: 100%;
+	border-radius: 1rem;
+
+	overflow: hidden;
+	background-color: rgb(30, 26, 48);
+	box-shadow: 0 0 0.5rem 0.5rem rgba(0, 0, 0, 0.1);
+
+	cursor: grabbing;
+}
+
+.container:active {
+	cursor: grabbing;
+}
+
+.wrapper {
+	display: flex;
+	padding: 2rem;
+	gap: 25px;
+}
+
+.card {
+	min-width: 150px;
+	max-width: 150px;
+	border: 1px solid #ddd;
+	border-radius: 8px;
+	padding: 16px;
+	text-align: center;
+	transition: transform 0.2s;
+	user-select: none;
+}
+
+.card:hover {
+	transform: scale(1.05);
+}
+
+.logo {
+	width: 50px;
+	height: 50px;
+	object-fit: contain;
+}

@@ -81,6 +81,9 @@
 	width: 100%;
 	border: 1px solid white;
 }
+#contact {
+	text-align: center;
+}
 
 @media only screen and (min-width: 640px) {
 	.container {

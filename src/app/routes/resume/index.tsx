@@ -54,7 +54,6 @@ const ResumePage = () => {
 						pause={2000}
 					/>
 				</div>
-				{/* <Profile /> */}
 			</section>
 			<section ref={profileSection} class="center">
 				<Profile />

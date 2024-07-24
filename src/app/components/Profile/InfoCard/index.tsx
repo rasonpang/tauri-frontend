@@ -2,12 +2,9 @@ import MarqueeStarBackground from "../../Background/Templates/MarqueeStar";
 import TiltCard from "../../Container/TiltCard";
 import styles from "./style.module.css";
 
-const InfoCard = () => {
-	const me = {
-		name: "Pang Sheng Wei",
-		workingSince: "05/19",
-	};
+import me from "@/data/constants/me.json";
 
+const InfoCard = () => {
 	return (
 		<TiltCard class={styles.info_card}>
 			<MarqueeStarBackground
@@ -41,9 +38,9 @@ const InfoCard = () => {
 						<i>Info Card</i>
 					</div>
 					<div id={styles.role}>
-						<h1>Software Developer</h1>
-						<hr />
 						<h1>Web Developer</h1>
+						<hr />
+						<h1>Software Developer</h1>
 					</div>
 					<div class={styles.corner}></div>
 				</div>
