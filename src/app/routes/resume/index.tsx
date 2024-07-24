@@ -59,7 +59,12 @@ const ResumePage = () => {
 				<Profile />
 			</section>
 			<section ref={experienceSection} class="center">
-				<SlideContainer>Experience</SlideContainer>
+				<SlideContainer>
+					<div>
+						<h1>Experience</h1>
+						<div>Work in progress...</div>
+					</div>
+				</SlideContainer>
 			</section>
 		</div>
 	);
