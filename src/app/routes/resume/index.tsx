@@ -2,8 +2,6 @@ import styles from "./style.module.css";
 
 // Components
 import SlideContainer from "@/app/components/Container/SlideContainer";
-import Background from "@/app/components/Background";
-import Marquee from "@/app/components/Marquee";
 import SideNavigator from "@/app/components/SideNavigator";
 import { createSignal, onMount } from "solid-js";
 import Typewriter from "@/app/components/Typewritter";
@@ -18,10 +16,10 @@ const ResumePage = () => {
 	let experienceSection: any;
 
 	const sentences: string[] = [
-		`It's a-me, <span style='color: red'>Mario</span> - Mario`,
-		"<span style='color: gold'>Justice</span> rains from above! - Overwatch",
-		`Hey you, you're <span style='color: blue'>finally awake</span> - Skyrim`,
-		"<span style='color: red'>Friendly fire</span> would not be tolerated! - Call of Duty",
+		`Second page contains Information about me and my Skills.`,
+		`Welcome to my Resume page.`,
+		`You may use Navigation on the end of screen.`,
+		`This component has Typewritter Effect.`,
 	];
 
 	const parsedSentences: SentencePart[][] = parseSentences(sentences);
