@@ -24,7 +24,7 @@ const MarqueeStarBackground = (props: Props) => {
 			rgba(255, 255, 255, 0.1) 100%
 		)`
 		}`,
-		`--star-size: ${props?.starSize ?? "20vw"}`,
+		`--star-size: ${props?.starSize ?? "20dvw"}`,
 		`--max-star-size: ${props?.maxStarSize ?? "200px"}`,
 	];
 

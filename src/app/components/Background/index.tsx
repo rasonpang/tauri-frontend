@@ -10,7 +10,7 @@ interface Props {
 const Background = (props: Props) => {
 	return (
 		<div
-			class={`${styles.container} ${props.class}`}
+			class={`${styles.container} ${props.class ?? ""}`}
 			style={props.style}
 		>
 			{props.children}

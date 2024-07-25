@@ -48,22 +48,22 @@
 #marquee_1 {
 	position: absolute;
 	top: 2dvh;
-	right: -10vw;
-	width: 110vw;
+	right: -10dvw;
+	width: 110dvw;
 	transform: rotate(9deg);
 }
 #marquee_2 {
 	position: absolute;
 	top: 60%;
-	right: -50vw;
-	width: 200vw;
+	right: -50dvw;
+	width: 200dvw;
 	transform: rotate(150deg);
 }
 #marquee_3 {
 	position: absolute;
 	bottom: 0;
-	right: -5vw;
-	width: 105vw;
+	right: -5dvw;
+	width: 105dvw;
 	transform: rotate(-5deg);
 }
 @media only screen and (min-width: 1300px) {

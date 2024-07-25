@@ -93,7 +93,7 @@ const Typewriter = (props: TypewriterProps) => {
 		<div
 			ref={container}
 			class="row"
-			style="max-width: 90vw; flex-flow: wrap;"
+			style="max-width: 90dvw; flex-flow: wrap;"
 		>
 			{displayedText().map((part) =>
 				part.text === "<br>" ? (

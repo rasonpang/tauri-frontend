@@ -1,6 +1,7 @@
 /* Information */
 .info_card {
-	width: 95vw;
+	position: relative;
+	width: 95dvw;
 	max-width: 640px;
 	height: 30dvh;
 	max-height: 350px;
@@ -90,7 +91,7 @@
 		font-size: 0.8em;
 	}
 	.info_card {
-		height: 50vw;
+		height: 50dvw;
 	}
 	#card_chip > img {
 		width: 27.5%;
