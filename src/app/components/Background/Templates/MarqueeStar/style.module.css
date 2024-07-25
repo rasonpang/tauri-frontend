@@ -47,7 +47,7 @@
 }
 #marquee_1 {
 	position: absolute;
-	top: 2vh;
+	top: 2dvh;
 	right: -10vw;
 	width: 110vw;
 	transform: rotate(9deg);
