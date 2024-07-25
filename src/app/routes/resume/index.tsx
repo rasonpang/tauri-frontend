@@ -18,7 +18,7 @@ const ResumePage = () => {
 	const sentences: string[] = [
 		`Second page contains Information about me and my Skills.`,
 		`Welcome to my Resume page.`,
-		`You may use Navigation on the end of screen.`,
+		`You may use Navigation at the end of screen.`,
 		`This component has Typewritter Effect.`,
 	];
 
