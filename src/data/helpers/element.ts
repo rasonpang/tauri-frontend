@@ -1,5 +1,16 @@
 import { SentencePart } from "../interfaces/elements";
 
+export function insertStyle(text: string, styles: string) {
+	return `<span style="${styles}">${text}</span>`;
+}
+
+export function ps(text: string, color: string) {
+	return insertStyle(
+		text,
+		`color: ${color}; text-decoration: underline;`
+	);
+}
+
 export function parseToTypewritter(sentences: string[]): SentencePart[][] {
 	return sentences.map((input: string) => {
 		// Regular expressions to match HTML tags and extract attributes

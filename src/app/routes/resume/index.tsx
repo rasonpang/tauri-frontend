@@ -1,7 +1,7 @@
 import styles from "./style.module.css";
 import { createSignal, onMount } from "solid-js";
 import { SentencePart } from "@/data/interfaces/elements";
-import { parseToTypewritter } from "@/data/helpers/element";
+import { insertStyle, parseToTypewritter, ps } from "@/data/helpers/element";
 
 // Components
 import MarqueeStarBackground from "@/app/components/Background/Templates/MarqueeStar";
@@ -16,10 +16,28 @@ const ResumePage = () => {
 	let experienceSection: any;
 
 	const sentences: string[] = [
-		`Good day sir, let's take a <span style='color: green'>small break</span> and have a sip of coffee☕`,
-		`<span style='color: red'>Failure</span> is part of the <span style='color: green'>Success</span>💪`,
-		`<span style='color: silver'>Treat people</span> how you want <span style='color: silver'>to be treated.</span> Start by respecting yourself🙏`,
-		`People get <span style='color: red'>emotional</span> when they care about it and that's where you <span style='color: #78c0ff'>draw the line</span>`,
+		`Good day sir, let's take a ${ps(
+			"small break",
+			"#08B404"
+		)} and have a sip of coffee☕`,
+
+		`${ps("Failure", "#FF6B6B")} is part of the ${ps(
+			"Success",
+			"#08B404"
+		)}💪`,
+
+		`${ps("Treat people", "#E3E3E3")} how you want ${ps(
+			"to be treated.",
+			"#E3E3E3"
+		)} Start by respecting yourself🙏`,
+
+		`People get ${ps(
+			"emotional",
+			"#FF6B6B"
+		)} when they care about it and that's where you ${ps(
+			"draw the line",
+			"#78c0ff"
+		)}`,
 	];
 
 	const parsedSentences: SentencePart[][] = parseToTypewritter(sentences);
