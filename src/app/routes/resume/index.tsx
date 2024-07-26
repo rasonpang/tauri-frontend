@@ -16,10 +16,10 @@ const ResumePage = () => {
 	let experienceSection: any;
 
 	const sentences: string[] = [
-		`Second page <span style='color: red'>contains</span> Information about me and my Skills.`,
-		`Welcome to my Resume page <span style='color: red'>destruction.</span>`,
-		`You may use Navigation at the end of screen.`,
-		`This component has Typewritter Effect.`,
+		`Good day sir, let's take a <span style='color: green'>small break</span> and have a sip of coffee☕`,
+		`<span style='color: red'>Failure</span> is part of the <span style='color: green'>Success</span>💪`,
+		`<span style='color: silver'>Treat people</span> how you want <span style='color: silver'>to be treated.</span> Start by respecting yourself🙏`,
+		`People get <span style='color: red'>emotional</span> when they care about it and that's where you <span style='color: #78c0ff'>draw the line</span>`,
 	];
 
 	const parsedSentences: SentencePart[][] = parseToTypewritter(sentences);

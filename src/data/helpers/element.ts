@@ -13,7 +13,9 @@ export function parseToTypewritter(sentences: string[]): SentencePart[][] {
 			while ((match = attributeRegex.exec(tag)) !== null) {
 				attributes[match[1]] = match[2];
 			}
-			return attributes;
+			return JSON.stringify(attributes) !== "{}"
+				? attributes
+				: null;
 		}
 
 		// Split the input string into an array of words and tags
@@ -38,7 +40,6 @@ export function parseToTypewritter(sentences: string[]): SentencePart[][] {
 							text: word,
 							...currentTagAttributes,
 						});
-						currentTagAttributes = null;
 					} else {
 						// Otherwise, just add the word as a text object
 						result.push({ text: word });
@@ -50,41 +51,3 @@ export function parseToTypewritter(sentences: string[]): SentencePart[][] {
 		return result;
 	});
 }
-
-// export function parseSentences(sentences: string[]): SentencePart[][] {
-// 	return sentences.map((sentence) => {
-// 		const parts: SentencePart[] = [];
-// 		const regex =
-// 			/(<span style='([^']*)'>(.*?)<\/span>)|([^<\s]+|\s+)/g;
-// 		let match: any;
-
-// 		while ((match = regex.exec(sentence)) !== null) {
-// 			if (match[4]) {
-// 				parts.push(
-// 					...match[4]
-// 						.split("")
-// 						.map((char: any) => ({
-// 							text:
-// 								char === " "
-// 									? "\u00A0"
-// 									: char,
-// 						}))
-// 				);
-// 			} else if (match[3]) {
-// 				parts.push(
-// 					...match[3]
-// 						.split("")
-// 						.map((char: any) => ({
-// 							text:
-// 								char === " "
-// 									? "\u00A0"
-// 									: char,
-// 							style: match[2],
-// 						}))
-// 				);
-// 			}
-// 		}
-
-// 		return parts;
-// 	});
-// }
