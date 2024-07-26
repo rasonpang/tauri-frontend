@@ -40,17 +40,35 @@ const MarqueeStarBackground = (props: Props) => {
 						id={styles.stars}
 						class={styles.stars}
 					>
-						<img src="shapes/star.svg" />
-						<img src="shapes/star.svg" />
-						<img src="shapes/star.svg" />
+						<img
+							src="shapes/star.svg"
+							alt="star"
+						/>
+						<img
+							src="shapes/star.svg"
+							alt="star"
+						/>
+						<img
+							src="shapes/star.svg"
+							alt="star"
+						/>
 					</div>
 					<div
 						id={styles.stars_2}
 						class={styles.stars}
 					>
-						<img src="shapes/star.svg" />
-						<img src="shapes/star.svg" />
-						<img src="shapes/star.svg" />
+						<img
+							src="shapes/star.svg"
+							alt="star"
+						/>
+						<img
+							src="shapes/star.svg"
+							alt="star"
+						/>
+						<img
+							src="shapes/star.svg"
+							alt="star"
+						/>
 					</div>
 				</>
 			)}

@@ -15,7 +15,10 @@ const InfoCard = () => {
 			<div class={`${styles.container}`}>
 				<div class={styles.wrapper_left}>
 					<span id={styles.card_chip}>
-						<img src="shapes/creditcard.svg"></img>
+						<img
+							src="shapes/creditcard.svg"
+							alt="credit-card-chip"
+						></img>
 					</span>
 					<span id={styles.name}>{me.name}</span>
 					<span
