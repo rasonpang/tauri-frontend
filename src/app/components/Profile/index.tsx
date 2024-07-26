@@ -12,7 +12,7 @@ const Profile = () => {
 	return (
 		<div class={`${styles.container} column center-x`}>
 			<Background style="background-color: rgb(4, 0, 24);">
-				<FallingStars />
+				{/* <FallingStars /> */}
 			</Background>
 			{/* Information Card */}
 			<div class="center" style="margin: 2rem 0;">

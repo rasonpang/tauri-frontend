@@ -1,14 +1,14 @@
 import styles from "./style.module.css";
+import { createSignal, onMount } from "solid-js";
+import { SentencePart } from "@/data/interfaces/elements";
+import { parseToTypewritter } from "@/data/helpers/element";
 
 // Components
+import MarqueeStarBackground from "@/app/components/Background/Templates/MarqueeStar";
 import SlideContainer from "@/app/components/Container/SlideContainer";
 import SideNavigator from "@/app/components/SideNavigator";
-import { createSignal, onMount } from "solid-js";
 import Typewriter from "@/app/components/Typewritter";
-import { SentencePart } from "@/data/interfaces/elements";
-import { parseSentences } from "@/data/helpers/element";
 import Profile from "@/app/components/Profile";
-import MarqueeStarBackground from "@/app/components/Background/Templates/MarqueeStar";
 
 const ResumePage = () => {
 	let welcomeSection: any;
@@ -16,13 +16,13 @@ const ResumePage = () => {
 	let experienceSection: any;
 
 	const sentences: string[] = [
-		`Second page contains Information about me and my Skills.`,
-		`Welcome to my Resume page.`,
+		`Second page <span style='color: red'>contains</span> Information about me and my Skills.`,
+		`Welcome to my Resume page <span style='color: red'>destruction.</span>`,
 		`You may use Navigation at the end of screen.`,
 		`This component has Typewritter Effect.`,
 	];
 
-	const parsedSentences: SentencePart[][] = parseSentences(sentences);
+	const parsedSentences: SentencePart[][] = parseToTypewritter(sentences);
 
 	const [sideNavigatorList, setSideNavigatorList]: any = createSignal([]);
 

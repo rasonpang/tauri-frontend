@@ -5,6 +5,11 @@ import {
 
 let debounceList: DebounceList = {};
 
+export const clone = (data: any) => {
+	const r = JSON.parse(JSON.stringify(data));
+	return r;
+};
+
 export const debounce = (func: Function, timeout: number = 1000) => {
 	if (typeof func != "function") return;
 

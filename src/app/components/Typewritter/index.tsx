@@ -1,110 +1,162 @@
-import { findLastIndexByKey } from "@/data/helpers/getter";
-import { createSignal, onCleanup, onMount } from "solid-js";
+import { createSignal, For, onMount } from "solid-js";
+import styles from "./styles.module.css";
 
-interface SentencePart {
-	text: string;
-	style?: string;
-}
+import { clone } from "@/data/helpers/helper";
+import { SentencePart } from "@/data/interfaces/elements";
 
 interface TypewriterProps {
+	mode?: "linear" | "random";
 	sentences: SentencePart[][];
 	speed?: number;
 	pause?: number;
 }
 
 const Typewriter = (props: TypewriterProps) => {
-	let container: any;
-	let timer: any;
+	let mode = props.mode ?? "linear";
+	let speed = props.speed ?? 150;
+	let pause = props.pause ?? 2000;
 
-	const { sentences, speed = 100, pause = 2000 } = props;
-	const [displayedText, setDisplayedText] = createSignal<SentencePart[]>(
-		[]
-	);
-	const [sentenceIndex, setSentenceIndex] = createSignal(0);
-	const [charIndex, setCharIndex] = createSignal(0);
-	const [isDeleting, setIsDeleting] = createSignal(false);
+	const [sentence, setSentence] = createSignal<SentencePart[]>([], {
+		equals: false,
+	});
+	const [pointers, setPointers] = createSignal({ sentence: 0 });
 
-	const getCurrentSentence = () => {
-		return sentences[sentenceIndex()];
-	};
+	const currentSentence = () =>
+		clone(props.sentences[pointers().sentence]);
 
-	const isContainerOverflowed = () => {
-		if (container.scrollWidth > window.innerWidth * 0.8) {
-			const obj = displayedText();
-			const spaceIndex = findLastIndexByKey(
-				obj,
-				"text",
-				"\u00A0"
+	function start() {
+		if (mode == "random") {
+			// Select -> Display
+			const newIndex = Math.floor(
+				Math.random() * props.sentences.length
 			);
-			if (spaceIndex > 0)
-				setTimeout(() => {
-					setDisplayedText((prev) => {
-						if (prev[spaceIndex]?.text)
-							prev[spaceIndex].text =
-								"<br>";
+			setPointers((prev) => {
+				prev.sentence = newIndex;
+				return prev;
+			});
 
-						return prev;
-					});
-				}, 3000);
+			let newSentence = currentSentence();
+			add(newSentence);
+		} else if (mode == "linear") {
+			// Display -> Select
+			let newSentence = currentSentence();
+			add(newSentence);
+
+			if (pointers().sentence < props.sentences.length - 1) {
+				setPointers((prev) => {
+					prev.sentence = prev.sentence + 1;
+					return prev;
+				});
+			} else {
+				setPointers((prev) => {
+					prev.sentence = 0;
+					return prev;
+				});
+			}
 		}
-	};
+	}
 
-	const type = () => {
-		const currentSentence = getCurrentSentence();
-		if (!isDeleting()) {
-			// Check overflow
-			isContainerOverflowed();
+	function add(value: any) {
+		let changeMode = false;
 
-			setDisplayedText((prev) => [
-				...prev,
-				currentSentence[charIndex()],
-			]);
-			setCharIndex(charIndex() + 1);
+		setSentence((prev) => {
+			if (value?.[0]?.text?.length === 0) {
+				value = value.slice(1);
+				prev.push({
+					...value[0],
+					...{ text: "" },
+				});
+			}
+
+			// If is new word
+			if (!prev[0]) {
+				prev.push({
+					...value[0],
+					...{ text: "" },
+				});
+			}
+
+			if (value.length > 0 && value[0].text.length > 0) {
+				// Add value into prev
+				prev[prev.length - 1].text =
+					prev[prev.length - 1].text +
+					value[0].text[0];
+
+				// Remove value
+				value[0].text = value[0].text.slice(1);
+			} else {
+				changeMode = true;
+				prev.pop();
+			}
+
+			return prev;
+		});
+
+		if (changeMode == false)
+			setTimeout(() => {
+				add(value);
+			}, speed);
+		else
+			setTimeout(() => {
+				remove();
+			}, pause);
+	}
+
+	function remove() {
+		let isFinish = false;
+
+		setSentence((prev) => {
+			if (prev.length == 0) {
+				isFinish = true;
+			} else {
+				let latestWord = prev[prev.length - 1].text;
+				latestWord = latestWord.substring(
+					latestWord.length - 1,
+					-1
+				);
+				prev[prev.length - 1].text = latestWord;
+
+				if (latestWord == "") prev.pop();
+			}
+
+			return prev;
+		});
+
+		if (isFinish == false) {
+			setTimeout(() => {
+				remove();
+			}, speed);
 		} else {
-			setDisplayedText((prev) => prev.slice(0, -1));
-			setCharIndex(charIndex() - 1);
+			setTimeout(() => {
+				start();
+			}, pause / 2);
 		}
 
-		if (!isDeleting() && charIndex() === currentSentence.length) {
-			setIsDeleting(true);
-			timer = setTimeout(type, pause);
-		} else if (isDeleting() && charIndex() === 0) {
-			setIsDeleting(false);
-			setSentenceIndex(
-				(prev) => (prev + 1) % sentences.length
-			);
-			setDisplayedText([]);
-			timer = setTimeout(type, 500);
-		} else {
-			timer = setTimeout(
-				type,
-				isDeleting() ? speed / 2 : speed
-			);
-		}
-	};
+		// setTimeout(() => {
+		// 	remove(value);
+		// }, 1000);
+	}
 
 	onMount(() => {
-		type();
-
-		onCleanup(() => clearTimeout(timer));
+		start();
 	});
 
 	return (
-		<div
-			ref={container}
-			class="row"
-			style="max-width: 90dvw; flex-flow: wrap;"
-		>
-			{displayedText().map((part) =>
-				part.text === "<br>" ? (
-					<div style="width: 100%; height: 1px;"></div>
-				) : (
-					<div style={part.style}>
-						{part.text}
-					</div>
-				)
-			)}
-		</div>
+		<span class={styles.container}>
+			{/* "_" is not reactive */}
+			<For each={sentence()}>
+				{(_, index) => (
+					<span
+						style={
+							sentence()[index()]
+								.style ?? ""
+						}
+					>
+						{sentence()[index()].text}
+					</span>
+				)}
+			</For>
+		</span>
 	);
 };
 

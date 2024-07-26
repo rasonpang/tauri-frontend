@@ -4,7 +4,11 @@ import styles from "./style.module.css";
 const TiltCard = (props: any) => {
 	let container: any;
 	const mouseTiltAmplifier = 15;
-	const [tiltStyle, setTiltStyle] = createSignal({});
+	const defaultTiltStyle = {
+		transform: `rotateX(0deg) rotateY(0deg)`,
+		"box-shadow": `0 0 0.5rem 0.3rem rgba(0, 0, 0, 0.3)`,
+	};
+	const [tiltStyle, setTiltStyle] = createSignal(defaultTiltStyle);
 
 	const onMouseEnter = (e: any) => {
 		const rect = container.getBoundingClientRect();
@@ -33,10 +37,7 @@ const TiltCard = (props: any) => {
 	};
 
 	const onMouseLeave = () => {
-		setTiltStyle({
-			transform: `rotateX(0deg) rotateY(0deg)`,
-			"box-shadow": `0 0 0.5rem 0.3rem rgba(0, 0, 0, 0.3)`,
-		});
+		setTiltStyle(defaultTiltStyle);
 	};
 
 	return (
