@@ -1,5 +1,5 @@
-.first_section_bg {
-	background-attachment: fixed;
+.container {
+	position: fixed;
 }
 
 /* Stars */

@@ -3,7 +3,6 @@ import InfoCard from "./InfoCard";
 import styles from "./style.module.css";
 
 import me from "@/data/constants/me.json";
-import FallingStars from "../Background/Templates/FallingStars";
 import Background from "../Background";
 
 const Profile = () => {
@@ -11,9 +10,7 @@ const Profile = () => {
 
 	return (
 		<div class={`${styles.container} column center-x`}>
-			<Background style="background-color: rgb(4, 0, 24);">
-				{/* <FallingStars /> */}
-			</Background>
+			<Background style="background-color: rgb(4, 0, 24); position: absolute;" />
 			{/* Information Card */}
 			<div class="center" style="margin: 2rem 0;">
 				<InfoCard />

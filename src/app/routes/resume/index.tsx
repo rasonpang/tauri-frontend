@@ -61,7 +61,10 @@ const ResumePage = () => {
 				ref={welcomeSection}
 				class="center overflow-hidden"
 			>
-				<MarqueeStarBackground />
+				<MarqueeStarBackground
+					class={styles.marquee_bg}
+					maxScrollVH={99}
+				/>
 
 				<div class={styles.quotes}>
 					<Typewriter

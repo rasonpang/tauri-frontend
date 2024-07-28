@@ -2,7 +2,7 @@ import { onMount } from "solid-js";
 import styles from "./style.module.css";
 
 const SlideContainer = (props: any) => {
-	let containerRef: any;
+	let container: any;
 	const classes = {
 		show: styles.show,
 		hidden: styles.default,
@@ -22,11 +22,14 @@ const SlideContainer = (props: any) => {
 
 	onMount(() => {
 		const observer = new IntersectionObserver(ObserverCallback);
-		if (containerRef) observer.observe(containerRef);
+		if (container) observer.observe(container);
 	});
 
 	return (
-		<div ref={containerRef} class={classes.hidden}>
+		<div
+			ref={container}
+			class={`${classes.hidden} ${styles.container}`}
+		>
 			{props.children}
 		</div>
 	);

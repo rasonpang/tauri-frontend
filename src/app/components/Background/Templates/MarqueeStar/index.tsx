@@ -6,32 +6,27 @@ import Background from "../..";
 interface Props {
 	hideStar?: boolean;
 	hideMarquee?: boolean;
+	maxScrollVH?: number;
 
-	backgroundImage?: string;
 	starSize?: string;
 	maxStarSize?: string;
+
+	class?: any;
+	style?: string;
 }
 
 const MarqueeStarBackground = (props: Props) => {
 	const containerStyles = [
-		`background-image: ${
-			props?.backgroundImage ??
-			`linear-gradient(
-			to right,
-			rgba(255, 255, 255, 0.1) 0%,
-			rgba(255, 255, 255, 0) 5%,
-			rgba(255, 255, 255, 0) 95%,
-			rgba(255, 255, 255, 0.1) 100%
-		)`
-		}`,
 		`--star-size: ${props?.starSize ?? "20dvw"}`,
 		`--max-star-size: ${props?.maxStarSize ?? "200px"}`,
+		props.style,
 	];
 
 	return (
 		<Background
-			class={styles.first_section_bg}
-			style={`background-image: ${containerStyles.join(";")}`}
+			class={`${styles.container} ${props.class ?? ""}`}
+			style={`${containerStyles.join(";")}`}
+			maxScrollVH={props.maxScrollVH}
 		>
 			{/* Stars */}
 			{!!props.hideStar == false && (

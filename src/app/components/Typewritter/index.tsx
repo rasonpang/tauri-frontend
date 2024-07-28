@@ -125,16 +125,12 @@ const Typewriter = (props: TypewriterProps) => {
 		if (isFinish == false) {
 			setTimeout(() => {
 				remove();
-			}, speed);
+			}, speed / 2);
 		} else {
 			setTimeout(() => {
 				start();
 			}, pause / 2);
 		}
-
-		// setTimeout(() => {
-		// 	remove(value);
-		// }, 1000);
 	}
 
 	onMount(() => {
