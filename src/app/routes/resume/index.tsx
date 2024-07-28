@@ -21,6 +21,11 @@ const ResumePage = () => {
 			"#08B404"
 		)} and have a sip of coffee☕`,
 
+		`This background has ${ps(
+			"Parallax Scrolling",
+			"green"
+		)} effect.`,
+
 		`${ps("Failure", "#FF6B6B")} is part of the ${ps(
 			"Success",
 			"#08B404"
