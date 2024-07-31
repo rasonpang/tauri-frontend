@@ -1,11 +1,10 @@
 import styles from "./style.module.css";
 import { createSignal, onMount } from "solid-js";
 import { SentencePart } from "@/data/interfaces/elements";
-import { insertStyle, parseToTypewritter, ps } from "@/data/helpers/element";
+import { parseToTypewritter, ps } from "@/data/helpers/element";
 
 // Components
 import MarqueeStarBackground from "@/app/components/Background/Templates/MarqueeStar";
-import SlideContainer from "@/app/components/Container/SlideContainer";
 import SideNavigator from "@/app/components/SideNavigator";
 import Typewriter from "@/app/components/Typewritter";
 import Profile from "@/app/components/Profile";
@@ -13,7 +12,6 @@ import Profile from "@/app/components/Profile";
 const ResumePage = () => {
 	let welcomeSection: any;
 	let profileSection: any;
-	let experienceSection: any;
 
 	const sentences: string[] = [
 		`Good day sir, let's take a ${ps(
@@ -53,7 +51,6 @@ const ResumePage = () => {
 		setSideNavigatorList([
 			{ name: "Welcome", target: welcomeSection },
 			{ name: "Profile", target: profileSection },
-			{ name: "Experience", target: experienceSection },
 		]);
 	});
 
@@ -64,7 +61,8 @@ const ResumePage = () => {
 			</div>
 			<section
 				ref={welcomeSection}
-				class="center overflow-hidden"
+				class="center"
+				style="overflow: hidden"
 			>
 				<MarqueeStarBackground
 					class={styles.marquee_bg}
@@ -79,16 +77,11 @@ const ResumePage = () => {
 					/>
 				</div>
 			</section>
-			<section ref={profileSection} class="center">
+			<section
+				ref={profileSection}
+				class={`${styles.profile_section} center`}
+			>
 				<Profile />
-			</section>
-			<section ref={experienceSection} class="center">
-				<SlideContainer>
-					<div>
-						<h1>Experience</h1>
-						<div>Work in progress...</div>
-					</div>
-				</SlideContainer>
 			</section>
 		</div>
 	);

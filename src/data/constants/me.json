@@ -1,53 +1,56 @@
 {
 	"name": "Pang Sheng Wei",
 	"workingSince": "05/19",
-	"programming_languages": [
-		{
-			"name": "JavaScript",
-			"logo": "logos/programming/js.svg",
-			"description": "Best language for building Web application."
-		},
-		{
-			"name": "TypeScript",
-			"logo": "logos/programming/ts.svg",
-			"description": "It's just Javascript with Type."
-		},
-		{
-			"name": "NodeJS",
-			"logo": "logos/programming/nodejs.svg",
-			"description": "Javascript runtime for building Frontend & Backend application."
-		},
-		{
-			"name": "NextJS",
-			"logo": "logos/programming/nextjs.svg",
-			"description": "Full-fledged React Framework for building robust web applications."
-		},
-		{
-			"name": "SolidJS",
-			"logo": "logos/programming/solidjs.svg",
-			"description": "React Framework for creating most light-weighted and most performant web application."
-		},
-		{
-			"name": "PHP",
-			"logo": "logos/programming/php.svg",
-			"description": "Best language for file reading/writing related tasks."
-		},
-		{
-			"name": "Python",
-			"logo": "logos/programming/python.svg",
-			"description": "Best language with Jupyter (Software) for AI related tasks."
-		},
-		{
-			"name": "Golang",
-			"logo": "logos/programming/go.svg",
-			"description": "Best for building high-performance application or Backend application."
+	"skills": {
+		"soft": [
+			"Time Management",
+			"Communication",
+			"Problem Solving",
+			"Adaptability",
+			"Team Work"
+		],
+		"hard": {
+			"js": {
+				"name": "JavaScript",
+				"logo": "logos/programming/js.svg",
+				"description": "Best language for building Web application."
+			},
+			"ts": {
+				"name": "TypeScript",
+				"logo": "logos/programming/ts.svg",
+				"description": "It's just Javascript with Type."
+			},
+			"nodejs": {
+				"name": "NodeJS",
+				"logo": "logos/programming/nodejs.svg",
+				"description": "Javascript runtime for building Frontend & Backend application."
+			},
+			"nextjs": {
+				"name": "NextJS",
+				"logo": "logos/programming/nextjs.svg",
+				"description": "Full-fledged React Framework for building robust web applications."
+			},
+			"solidjs": {
+				"name": "SolidJS",
+				"logo": "logos/programming/solidjs.svg",
+				"description": "React Framework for creating most light-weighted and most performant web application."
+			},
+			"php": {
+				"name": "PHP",
+				"logo": "logos/programming/php.svg",
+				"description": "Best language for file reading/writing related tasks."
+			},
+			"python": {
+				"name": "Python",
+				"logo": "logos/programming/python.svg",
+				"description": "Best language with Jupyter (Software) for AI related tasks."
+			},
+			"go": {
+				"name": "Golang",
+				"logo": "logos/programming/go.svg",
+				"description": "Best for building high-performance application or Backend application."
+			}
 		}
-	],
-	"soft_skills": [
-		"Time Management",
-		"Communication",
-		"Problem Solving",
-		"Adaptability",
-		"Team Work"
-	]
+	},
+	"experiences": []
 }

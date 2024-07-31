@@ -38,6 +38,10 @@
 .marquee_bg {
 	background: linear-gradient(to bottom right, #7979ff, #7f007f);
 }
+.profile_section {
+	box-shadow: 0 0 0.3rem 0.1rem white;
+	height: 200dvh;
+}
 
 @media only screen and (min-width: 1000px) {
 	.side_navigator {
