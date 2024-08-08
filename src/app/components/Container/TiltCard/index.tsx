@@ -1,16 +1,29 @@
 import { createSignal } from "solid-js";
 import styles from "./style.module.css";
 
-const TiltCard = (props: any) => {
+interface Props {
+	children?: any;
+
+	class?: string;
+	boxShadowColor?: string;
+}
+
+const TiltCard = (props: Props) => {
 	let container: any;
+	let timer: any;
+
 	const mouseTiltAmplifier = 15;
+	const boxShadowColor = props?.boxShadowColor ?? "rgba(0, 0, 0, 0.3)";
+
 	const defaultTiltStyle = {
 		transform: `rotateX(0deg) rotateY(0deg)`,
-		"box-shadow": `0 0 0.5rem 0.3rem rgba(0, 0, 0, 0.3)`,
+		"box-shadow": `0 0 0.5rem 0.3rem ${boxShadowColor}`,
 	};
 	const [tiltStyle, setTiltStyle] = createSignal(defaultTiltStyle);
 
 	const onMouseEnter = (e: any) => {
+		clearTimeout(timer);
+
 		const rect = container.getBoundingClientRect();
 		const x = e.clientX - rect.left; // x position within the element
 		const y = e.clientY - rect.top; // y position within the element
@@ -28,12 +41,17 @@ const TiltCard = (props: any) => {
 		const shadowY = deltaY * 20;
 
 		const transform = `rotateX(${angleX}deg) rotateY(${angleY}deg)`;
-		const boxShadow = `${shadowX}px ${shadowY}px 1rem 1rem rgba(0, 0, 0, 0.3)`;
+		const boxShadow = `${shadowX}px ${shadowY}px 1rem 1rem ${boxShadowColor}`;
 
 		setTiltStyle({
 			transform: transform,
 			"box-shadow": boxShadow,
 		});
+
+		// Return to default after 3 seconds
+		timer = setTimeout(() => {
+			onMouseLeave();
+		}, 3000);
 	};
 
 	const onMouseLeave = () => {

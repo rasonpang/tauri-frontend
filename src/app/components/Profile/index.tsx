@@ -1,26 +1,17 @@
-import LanguageCardGrid from "./LanguageCardGrid";
 import InfoCard from "./InfoCard";
 import styles from "./style.module.css";
 
-import me from "@/data/constants/me.json";
-import Background from "../Background";
-
 const Profile = () => {
-	const programmingLanguages = me.programming_languages;
-
 	return (
-		<div class={`${styles.container} column center-x`}>
-			<Background style="background-color: rgb(4, 0, 24); position: absolute;" />
-			{/* Information Card */}
-			<div class="center" style="margin: 2rem 0;">
-				<InfoCard />
-			</div>
+		<div class={styles.container}>
+			<div class={styles.main}>
+				{/* Information Card */}
+				<span class="center-x">
+					<InfoCard />
+				</span>
 
-			{/* Skills */}
-			<div class="center">
-				<LanguageCardGrid
-					languages={programmingLanguages}
-				/>
+				{/* Experience */}
+				<span>Experience</span>
 			</div>
 		</div>
 	);

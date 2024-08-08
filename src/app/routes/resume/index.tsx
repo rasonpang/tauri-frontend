@@ -13,7 +13,6 @@ import Profile from "@/app/components/Profile";
 const ResumePage = () => {
 	let welcomeSection: any;
 	let profileSection: any;
-	let experienceSection: any;
 
 	const sentences: string[] = [
 		`Good day sir, let's take a ${ps(
@@ -53,7 +52,6 @@ const ResumePage = () => {
 		setSideNavigatorList([
 			{ name: "Welcome", target: welcomeSection },
 			{ name: "Profile", target: profileSection },
-			{ name: "Experience", target: experienceSection },
 		]);
 	});
 
@@ -79,16 +77,12 @@ const ResumePage = () => {
 					/>
 				</div>
 			</section>
-			<section ref={profileSection} class="center">
+			<section
+				ref={profileSection}
+				class="center"
+				style="height: 300vh"
+			>
 				<Profile />
-			</section>
-			<section ref={experienceSection} class="center">
-				<SlideContainer>
-					<div>
-						<h1>Experience</h1>
-						<div>Work in progress...</div>
-					</div>
-				</SlideContainer>
 			</section>
 		</div>
 	);

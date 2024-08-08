@@ -2,7 +2,7 @@
 .info_card {
 	position: relative;
 	width: 95dvw;
-	max-width: 640px;
+	max-width: 400px;
 	height: 30dvh;
 	max-height: 350px;
 
@@ -91,6 +91,7 @@
 		font-size: 0.8em;
 	}
 	.info_card {
+		max-width: 640px;
 		height: 50dvw;
 	}
 	#card_chip > img {

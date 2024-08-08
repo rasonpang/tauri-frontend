@@ -6,10 +6,12 @@ import me from "@/data/constants/me.json";
 
 const InfoCard = () => {
 	return (
-		<TiltCard class={styles.info_card}>
+		<TiltCard
+			class={styles.info_card}
+			boxShadowColor="rgba(255, 255, 255, 0.3)"
+		>
 			<MarqueeStarBackground
 				hideMarquee={true}
-				backgroundImage="transparent"
 				starSize="70px"
 			/>
 			<div class={`${styles.container}`}>
