@@ -1,9 +1,5 @@
 const BlankLayout = (props: any) => {
-  return (
-    <div>
-      <div>{props.children}</div>
-    </div>
-  );
+	return <>{props.children}</>;
 };
 
 export default BlankLayout;

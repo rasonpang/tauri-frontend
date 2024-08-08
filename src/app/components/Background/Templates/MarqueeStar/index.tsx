@@ -17,7 +17,7 @@ interface Props {
 
 const MarqueeStarBackground = (props: Props) => {
 	const containerStyles = [
-		`--star-size: ${props?.starSize ?? "20dvw"}`,
+		`--star-size: ${props?.starSize ?? "20vw"}`,
 		`--max-star-size: ${props?.maxStarSize ?? "200px"}`,
 		props.style,
 	];

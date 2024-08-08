@@ -3,17 +3,23 @@ import styles from "./style.module.css";
 
 const Profile = () => {
 	return (
-		<div class={styles.container}>
-			<div class={styles.main}>
+		<span class={`${styles.container} center-x`}>
+			<div class={`${styles.main} container`}>
 				{/* Information Card */}
 				<span class="center-x">
 					<InfoCard />
 				</span>
 
-				{/* Experience */}
-				<span>Experience</span>
+				{/* School */}
+				<div>
+					<div>
+						New Era Institute of Vocational
+						& Continuing Education
+					</div>
+					<img src="school.png"></img>
+				</div>
 			</div>
-		</div>
+		</span>
 	);
 };
 

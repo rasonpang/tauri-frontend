@@ -1,9 +1,9 @@
 /* Information */
 .info_card {
 	position: relative;
-	width: 95dvw;
+	width: 95vw;
 	max-width: 400px;
-	height: 30dvh;
+	height: 30vh;
 	max-height: 350px;
 
 	background-color: rgb(8, 8, 8);
@@ -32,7 +32,7 @@
 }
 #card_chip > img {
 	cursor: pointer;
-	width: 6dvh;
+	width: 6vh;
 	background-color: gold;
 	border: 0.2rem solid rgb(255, 247, 202);
 	border-radius: 1rem;
@@ -92,7 +92,7 @@
 	}
 	.info_card {
 		max-width: 640px;
-		height: 50dvw;
+		height: 50vw;
 	}
 	#card_chip > img {
 		width: 27.5%;

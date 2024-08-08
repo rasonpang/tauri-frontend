@@ -69,7 +69,7 @@ const ResumePage = () => {
 					maxScrollVH={99}
 				/>
 
-				<div class={styles.quotes}>
+				<div class={`${styles.quotes} container`}>
 					<Typewriter
 						sentences={parsedSentences}
 						speed={70}
