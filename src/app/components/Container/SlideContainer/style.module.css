@@ -6,7 +6,7 @@
 	opacity: 0;
 	filter: blur(0.1rem);
 
-	transition: all 1s ease-in;
+	transition: all 0.75s ease-in-out;
 }
 .show {
 	opacity: 1;

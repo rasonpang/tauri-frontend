@@ -8,56 +8,76 @@
 			"Adaptability",
 			"Team Work"
 		],
-		"hard": [
-			{
+		"hard": {
+			"js": {
 				"name": "JavaScript",
-				"alias": "js",
 				"logo": "logos/programming/js.svg",
 				"description": "Best language for building Web application."
 			},
-			{
+			"ts": {
 				"name": "TypeScript",
-				"alias": "ts",
 				"logo": "logos/programming/ts.svg",
 				"description": "It's just Javascript with Type."
 			},
-			{
+			"nodejs": {
 				"name": "NodeJS",
-				"alias": "nodejs",
 				"logo": "logos/programming/nodejs.svg",
 				"description": "Javascript runtime for building Frontend & Backend application."
 			},
-			{
+			"reactjs": {
+				"name": "ReactJS",
+				"logo": "lgoos/programming/reactjs.svg"
+			},
+			"nextjs": {
 				"name": "NextJS",
-				"alias": "nextjs",
 				"logo": "logos/programming/nextjs.svg",
 				"description": "Full-fledged React Framework for building robust web applications."
 			},
-			{
+			"solidjs": {
 				"name": "SolidJS",
-				"alias": "solidjs",
 				"logo": "logos/programming/solidjs.svg",
 				"description": "React Framework for creating most light-weighted and most performant web application."
 			},
-			{
+			"vuejs": {
+				"name": "VueJS",
+				"logo": "logos/programming/vuejs.svg"
+			},
+			"uniapp": {
+				"name": "UniApp",
+				"logo": "logos/programming/uniapp.png"
+			},
+			"php": {
 				"name": "PHP",
-				"alias": "php",
 				"logo": "logos/programming/php.svg",
 				"description": "Best language for file reading/writing related tasks."
 			},
-			{
+			"python": {
 				"name": "Python",
-				"alias": "python",
 				"logo": "logos/programming/python.svg",
 				"description": "Best language with Jupyter (Software) for AI related tasks."
 			},
-			{
+			"golang": {
 				"name": "Golang",
-				"alias": "golang",
 				"logo": "logos/programming/go.svg",
 				"description": "Best for building high-performance application or Backend application."
+			},
+			"nestjs": {
+				"name": "NestJS",
+				"logo": "logos/programming/nestjs.svg"
+			},
+			"apollographql": {
+				"name": "Apollo GraphQL",
+				"logo": "logos/programming/graphql.svg"
+			},
+			"mysql": {
+				"name": "MySQL",
+				"logo": "logos/programming/mysql.svg"
+			},
+			"postgresql": {
+				"name": "PostgreSQL",
+				"logo": "logos/programming/pgql.svg"
 			}
-		]
+		}
 	},
 	"education": {
 		"schoolName": "New Era Institute of Vocational & Continuing Education",

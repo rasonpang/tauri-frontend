@@ -1,0 +1,30 @@
+.working_time {
+	font-size: 0.7rem;
+	font-weight: 600;
+}
+.working_role {
+	font-size: 1rem;
+	font-weight: 700;
+}
+.working_skill_wrapper {
+	gap: 1rem;
+	margin: 0.5rem 0;
+	overflow: auto;
+}
+.working_skill {
+	height: 25px;
+	gap: 0.5rem;
+	padding: 0.25rem 0.75rem;
+
+	color: var(--color);
+	background-color: var(--skill-background-color);
+	border-radius: 2rem;
+	min-width: fit-content;
+}
+
+@media only screen and (min-width: 1000px) {
+	.working_wrapper {
+		padding: 1rem;
+		gap: 1rem;
+	}
+}

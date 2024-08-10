@@ -81,7 +81,7 @@ const ResumePage = () => {
 			<section
 				ref={profileSection}
 				class="center"
-				style="min-height: 500vh"
+				style="height: unset;"
 			>
 				<Profile setNavList={setNavList} />
 			</section>
