@@ -1,7 +1,10 @@
-import InfoCard from "./InfoCard";
 import styles from "./style.module.css";
 
-const Profile = () => {
+import AboutSchool from "./AboutSchool";
+import InfoCard from "./InfoCard";
+import Timeline from "./Timeline";
+
+const Profile = (props: any) => {
 	return (
 		<span class={`${styles.container} center-x`}>
 			<div class={`${styles.main} container`}>
@@ -10,14 +13,15 @@ const Profile = () => {
 					<InfoCard />
 				</span>
 
+				<hr style={{ width: "100%" }} />
 				{/* School */}
 				<div>
-					<div>
-						New Era Institute of Vocational
-						& Continuing Education
-					</div>
-					<img src="school.png"></img>
+					<AboutSchool />
 				</div>
+
+				<hr style={{ width: "100%" }} />
+				{/* Work Experience */}
+				<Timeline setNavList={props.setNavList} />
 			</div>
 		</span>
 	);

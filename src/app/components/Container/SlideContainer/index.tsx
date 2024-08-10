@@ -1,8 +1,27 @@
 import { onMount } from "solid-js";
 import styles from "./style.module.css";
 
-const SlideContainer = (props: any) => {
+interface Props {
+	from?: "left" | "right" | "top" | "bottom";
+	children?: any;
+}
+
+const SlideContainer = (props: Props) => {
 	let container: any;
+
+	let containerStyle: any = [];
+
+	switch (props.from) {
+		case "left":
+			containerStyle.push("transform: translate(-100%, 0)");
+			break;
+		case "right":
+			containerStyle.push("transform: translate(100%, 0)");
+			break;
+		default:
+			containerStyle.push("transform: translate(-100%, 0)");
+	}
+
 	const classes = {
 		show: styles.show,
 		hidden: styles.default,
@@ -28,7 +47,8 @@ const SlideContainer = (props: any) => {
 	return (
 		<div
 			ref={container}
-			class={`${classes.hidden} ${styles.container}`}
+			class={`${classes.hidden}`}
+			style={containerStyle.join(" ")}
 		>
 			{props.children}
 		</div>

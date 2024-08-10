@@ -3,6 +3,16 @@
 	overflow: hidden;
 }
 
+.title {
+	font-family: "PT Sans", sans-serif;
+	font-weight: 800;
+	font-size: 48px;
+
+	-webkit-text-fill-color: transparent;
+	background: linear-gradient(180deg, #fff, #494949);
+	background-clip: text;
+}
+
 /* Center */
 .center {
 	display: flex;

@@ -46,10 +46,11 @@ const ResumePage = () => {
 
 	const parsedSentences: SentencePart[][] = parseToTypewritter(sentences);
 
-	const [sideNavigatorList, setSideNavigatorList]: any = createSignal([]);
+	const [navList, setNavList]: any = createSignal([]);
 
 	onMount(() => {
-		setSideNavigatorList([
+		setNavList((prev: any) => [
+			...prev,
 			{ name: "Welcome", target: welcomeSection },
 			{ name: "Profile", target: profileSection },
 		]);
@@ -58,7 +59,7 @@ const ResumePage = () => {
 	return (
 		<div class={styles.container}>
 			<div class={styles.side_navigator}>
-				<SideNavigator list={sideNavigatorList()} />
+				<SideNavigator list={navList()} />
 			</div>
 			<section
 				ref={welcomeSection}
@@ -80,9 +81,9 @@ const ResumePage = () => {
 			<section
 				ref={profileSection}
 				class="center"
-				style="height: 300vh"
+				style="min-height: 500vh"
 			>
-				<Profile />
+				<Profile setNavList={setNavList} />
 			</section>
 		</div>
 	);

@@ -1,6 +1,5 @@
 {
 	"name": "Pang Sheng Wei",
-	"workingSince": "05/19",
 	"skill": {
 		"soft": [
 			"Time Management",
@@ -12,44 +11,107 @@
 		"hard": [
 			{
 				"name": "JavaScript",
+				"alias": "js",
 				"logo": "logos/programming/js.svg",
 				"description": "Best language for building Web application."
 			},
 			{
 				"name": "TypeScript",
+				"alias": "ts",
 				"logo": "logos/programming/ts.svg",
 				"description": "It's just Javascript with Type."
 			},
 			{
 				"name": "NodeJS",
+				"alias": "nodejs",
 				"logo": "logos/programming/nodejs.svg",
 				"description": "Javascript runtime for building Frontend & Backend application."
 			},
 			{
 				"name": "NextJS",
+				"alias": "nextjs",
 				"logo": "logos/programming/nextjs.svg",
 				"description": "Full-fledged React Framework for building robust web applications."
 			},
 			{
 				"name": "SolidJS",
+				"alias": "solidjs",
 				"logo": "logos/programming/solidjs.svg",
 				"description": "React Framework for creating most light-weighted and most performant web application."
 			},
 			{
 				"name": "PHP",
+				"alias": "php",
 				"logo": "logos/programming/php.svg",
 				"description": "Best language for file reading/writing related tasks."
 			},
 			{
 				"name": "Python",
+				"alias": "python",
 				"logo": "logos/programming/python.svg",
 				"description": "Best language with Jupyter (Software) for AI related tasks."
 			},
 			{
 				"name": "Golang",
+				"alias": "golang",
 				"logo": "logos/programming/go.svg",
 				"description": "Best for building high-performance application or Backend application."
 			}
 		]
-	}
+	},
+	"education": {
+		"schoolName": "New Era Institute of Vocational & Continuing Education",
+		"certificate": "Advanced Diploma",
+		"course": "Software Engineering & Mobile Development",
+		"skills": [
+			"HTML",
+			"Javascript",
+			"CSS",
+			"Java",
+			"Swift",
+			"PHP",
+			"MySQL",
+			"C#",
+			"Unity"
+		]
+	},
+	"working": [
+		{
+			"companyName": "J&T Express (Malaysia) Sdn Bhd",
+			"role": "Fullstack Web Developer",
+			"time": { "from": 1556640000000, "to": 1585670400000 },
+			"skills": ["php", "mysql"],
+			"projects": [
+				"j&t-facebook-messenger-bot",
+				"j&t-official-website"
+			]
+		},
+		{
+			"companyName": "Lava X Technologies Sdn Bhd",
+			"role": "Fullstack Web Developer",
+			"time": { "from": 1588262400000, "to": 1635696000000 },
+			"skills": [
+				"nodejs",
+				"nextjs",
+				"nestjs",
+				"postgresql",
+				"apollographql"
+			],
+			"projects": ["airasia-food"]
+		},
+		{
+			"companyName": "UP DevLabs",
+			"role": "Senior Frontend Developer",
+			"time": { "from": 1638288000000, "to": 1696089600000 },
+			"skills": ["vuejs", "uniapp"],
+			"projects": []
+		},
+		{
+			"companyName": "Volservers Solutions Sdn Bhd",
+			"role": "Senior Frontend Developer",
+			"time": { "from": 1698768000000, "to": 1719763200000 },
+			"skills": ["vuejs"],
+			"projects": ["iamcasting"]
+		}
+	]
 }

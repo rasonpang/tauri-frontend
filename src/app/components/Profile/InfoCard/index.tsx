@@ -1,3 +1,4 @@
+import { getDate } from "@/data/helpers/datetime";
 import MarqueeStarBackground from "../../Background/Templates/MarqueeStar";
 import TiltCard from "../../Container/TiltCard";
 import styles from "./style.module.css";
@@ -31,7 +32,11 @@ const InfoCard = () => {
 							WORKING SINCE
 						</span>
 						<span id={styles.date}>
-							{me.workingSince}
+							{getDate(
+								me.working[0]
+									.time
+									.from
+							)}
 						</span>
 					</span>
 				</div>
