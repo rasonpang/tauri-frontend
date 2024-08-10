@@ -1,5 +1,6 @@
 .container {
 	gap: 1rem;
+	padding-bottom: 2rem;
 }
 
 .experiences {
@@ -79,6 +80,10 @@
 }
 
 @media only screen and (min-width: 1000px) {
+	.container {
+		padding-bottom: 0;
+	}
+
 	.company_0 {
 		--color: white !important;
 		--border-color: #e60000 !important;
