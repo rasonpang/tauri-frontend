@@ -113,8 +113,8 @@ const Work = (props: any) => {
 								width={25}
 								height={25}
 							></img>
-							No project able to be
-							mentioned...
+							No project was able to
+							be mentioned...
 						</span>
 					)}
 				</span>

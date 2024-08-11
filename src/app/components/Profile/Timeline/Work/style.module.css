@@ -28,13 +28,17 @@
 	overflow: auto;
 }
 .project {
+	--size: 20rem;
+
 	position: relative;
 
 	border: 0.1rem solid var(--border-color);
 	border-radius: 20px;
 
-	width: 30rem;
-	height: 15rem;
+	min-width: var(--size);
+	max-width: var(--size);
+
+	height: calc(var(--size) / 2);
 
 	cursor: pointer;
 	overflow: hidden;
@@ -86,5 +90,8 @@
 	.working_wrapper {
 		padding: 1rem;
 		gap: 1rem;
+	}
+	.project {
+		--size: 30rem;
 	}
 }
