@@ -2,8 +2,8 @@ import { For, onMount } from "solid-js";
 
 import styles from "./style.module.css";
 import me from "@/data/constants/me.json";
+
 import CollapsibleContainer from "../../Container/CollapsibleContainer";
-import { getDate } from "@/data/helpers/datetime";
 import Work from "./Work";
 
 interface Props {
@@ -21,16 +21,28 @@ const Timeline = (props: Props) => {
 	});
 
 	const getWorkingData = () => {
+		const skillList: any = me.skill.hard;
+		const projectList: any = me.projects;
+
 		return me.working.map((i) => {
-			const newSkills: any = i.skills.map(
-				(skill: keyof typeof me.skill.hard) => {
-					if (me.skill.hard[skill]) {
-						return me.skill.hard[skill];
-					}
-					return skill;
+			// Skills
+			const newSkills: any = i.skills.map((skill: any) => {
+				return skillList[skill]
+					? skillList[skill]
+					: skill;
+			});
+			i.skills = newSkills;
+
+			// Projects
+			const newProjects: any = i.projects.map(
+				(project: any) => {
+					return projectList[project]
+						? projectList[project]
+						: project;
 				}
 			);
-			i.skills = newSkills;
+			i.projects = newProjects;
+
 			return i;
 		});
 	};

@@ -95,6 +95,36 @@
 			"Unity"
 		]
 	},
+	"projects": {
+		"j&t-facebook-messenger-bot": {
+			"name": "J&T Messenger Bot",
+			"thumbnail": "projects/j&t-messenger.png",
+			"hover_thumbnail": "",
+			"url": "https://www.facebook.com/messages/t/923875141130613",
+			"description": ""
+		},
+		"j&t-official-website": {
+			"name": "J&T Express (Malaysia)",
+			"thumbnail": "projects/j&t-official.png",
+			"hover_thumbnail": "",
+			"url": "https://jtexpress.my/",
+			"description": ""
+		},
+		"airasia-food": {
+			"name": "airasia Food",
+			"thumbnail": "projects/airasia-food.png",
+			"hover_thumbnail": "",
+			"url": "https://www.airasia.com/food/city/kuala-lumpur/",
+			"description": ""
+		},
+		"iamcasting": {
+			"name": "IAmCasting",
+			"thumbnail": "projects/iamcasting.png",
+			"hover_thumbnail": "",
+			"url": "https://iamcasting.asia/",
+			"description": ""
+		}
+	},
 	"working": [
 		{
 			"companyName": "J&T Express (Malaysia) Sdn Bhd",
