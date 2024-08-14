@@ -1,0 +1,120 @@
+.gap {
+	gap: 1rem;
+}
+
+.page {
+	text-align: start;
+	padding: 1rem;
+}
+
+.container {
+	width: 100%;
+	max-width: 800px;
+
+	gap: 1rem;
+}
+
+.title {
+	--first-color: var(--secondary-background);
+	--second-color: var(--primary-background);
+
+	font-weight: 600;
+	font-size: 1.8rem;
+	margin-bottom: 0;
+}
+
+.form_field {
+	gap: 0.5rem;
+}
+
+.rate_calculator_wrapper {
+	text-align: center;
+}
+.rate_calculator {
+	width: 100%;
+	border: double 0.15rem transparent;
+	border-radius: 0.5rem;
+	background-image: linear-gradient(var(--bg-primary), var(--bg-primary)),
+		linear-gradient(
+			135deg,
+			var(--primary-background),
+			var(--secondary-background) 10%,
+			var(--tertiary-background) 50%,
+			var(--secondary-background) 90%,
+			var(--primary-background)
+		);
+	background-origin: border-box;
+	background-clip: content-box, border-box;
+}
+
+.value {
+	color: #eb62c2;
+	font-size: 1.4rem;
+	letter-spacing: 0;
+	font-weight: 700;
+}
+.value_label {
+	color: gray;
+	font-size: 0.8rem;
+	letter-spacing: 0;
+}
+.value_description {
+	color: #eb62c2;
+	font-size: 0.8rem;
+	letter-spacing: 0;
+}
+.description {
+	color: gray;
+	font-size: 0.8rem;
+	letter-spacing: 0;
+}
+
+/* Buttons */
+.buttons_wrapper {
+	width: 100%;
+	justify-content: space-between;
+	gap: 1rem;
+}
+.buttons_wrapper > a {
+	width: 50%;
+	padding: 0.5rem;
+	color: var(--secondary-background);
+	border: 0.12rem solid var(--secondary-background);
+	border-radius: 0.5rem;
+	text-align: center;
+
+	transition: all 0.5s;
+}
+.buttons_wrapper > .filled_button {
+	width: 50%;
+	padding: 0.5rem;
+	border-radius: 0.5rem;
+	text-align: center;
+
+	transition: all 0.5s;
+
+	color: white;
+	border: 0.12rem solid var(--secondary-background);
+	background-color: var(--secondary-background);
+	cursor: pointer;
+}
+.buttons_wrapper > a:hover {
+	background-color: rgb(236, 236, 236);
+}
+.buttons_wrapper > .filled_button:hover {
+	background-color: #eb62c2;
+}
+
+@media only screen and (min-width: 1000px) {
+	.calculator_wrapper {
+		flex-direction: row;
+	}
+
+	.rate_calculator_value_wrapper {
+		width: 50%;
+	}
+
+	.rate_calculator_wrapper {
+		width: 50%;
+	}
+}

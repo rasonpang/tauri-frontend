@@ -1,7 +1,12 @@
 import { createSignal } from "solid-js";
 import styles from "./style.module.css";
 
-const Header = () => {
+interface Props {
+	children: any;
+	class?: string;
+}
+
+const Header = (props: Props) => {
 	const [headerVisibility, setHeaderVisibility] = createSignal(true);
 
 	const onScroll = (e: any) => {
@@ -18,13 +23,13 @@ const Header = () => {
 
 	return (
 		<div
-			class={`${styles.header} ${
+			class={`${styles.header} ${props.class ?? ""} ${
 				headerVisibility() === false
 					? styles["header-hide"]
 					: ""
 			}`}
 		>
-			Header
+			{props.children}
 		</div>
 	);
 };

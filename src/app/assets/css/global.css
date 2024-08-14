@@ -46,6 +46,8 @@ a {
 hr {
 	border: 1px solid var(--bg-secondary);
 	background-color: var(--bg-secondary);
+	width: 100%;
+	margin: 1rem 0;
 }
 
 div {
@@ -56,4 +58,24 @@ div {
 span {
 	display: flex;
 	flex-direction: row;
+}
+
+input,
+select {
+	border: 1px solid rgb(190, 190, 190);
+	border-radius: 0.4rem;
+
+	padding: 0.5rem 1rem;
+}
+
+select {
+	background-color: transparent;
+}
+
+input::placeholder {
+	color: rgb(158, 158, 158);
+}
+
+input:disabled {
+	background-color: rgb(233, 233, 233);
 }

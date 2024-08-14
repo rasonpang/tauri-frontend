@@ -13,13 +13,13 @@ const Profile = (props: any) => {
 					<InfoCard />
 				</span>
 
-				<hr style={{ width: "100%" }} />
+				<hr />
 				{/* School */}
 				<div>
 					<AboutSchool />
 				</div>
 
-				<hr style={{ width: "100%" }} />
+				<hr />
 				{/* Work Experience */}
 				<Timeline setNavList={props.setNavList} />
 			</div>

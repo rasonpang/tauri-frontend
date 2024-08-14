@@ -10,15 +10,34 @@ import "./app/assets/css/animation.css";
 
 // Layout
 import BlankLayout from "@/app/layouts/BlankLayout";
-import PagingLayout from "@/app/layouts/PagingLayout";
+import AeonLayout from "@/app/layouts/AeonLayout";
+// import PagingLayout from "@/app/layouts/PagingLayout";
 // import BarLayout from "@/app/layouts/BarLayout";
 
 // Routes configuration
 const routes = [
-	// { path: "/", component: lazy(() => import("@/app/routes/index")) },
 	{
 		path: "/",
 		component: lazy(() => import("@/app/routes/resume/index")),
+	},
+];
+
+const aeonRoutes = [
+	{
+		path: "/",
+		component: lazy(() => import("@/app/routes/aeon-credit/index")),
+	},
+	{
+		path: "/application",
+		component: lazy(
+			() => import("@/app/routes/aeon-credit/application")
+		),
+	},
+	{
+		path: "/loan-detail",
+		component: lazy(
+			() => import("@/app/routes/aeon-credit/loan-calculator")
+		),
 	},
 ];
 
@@ -35,8 +54,17 @@ render(
 				))}
 			</Route>
 
+			<Route path="/aeon-credit" component={AeonLayout}>
+				{aeonRoutes.map(({ path, component }) => (
+					<Route
+						path={path}
+						component={component}
+					/>
+				))}
+			</Route>
+
 			{/* Paging Layout */}
-			<Route path="/sign-in" component={PagingLayout}>
+			{/* <Route path="/sign-in" component={PagingLayout}>
 				<Route
 					path="/"
 					component={lazy(
@@ -46,7 +74,7 @@ render(
 							)
 					)}
 				></Route>
-			</Route>
+			</Route> */}
 		</Router>
 	),
 	document.getElementById("root") as HTMLElement
