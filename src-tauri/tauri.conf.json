@@ -1,19 +1,21 @@
 {
-	"productName": "feframework",
-	"version": "0.0.0",
-	"identifier": "com.tauri.dev",
+	"productName": "next-tauri",
+	"version": "0.1.0",
+	"identifier": "com.next-tauri.dev",
 	"build": {
-		"beforeDevCommand": "bun run start",
-		"devUrl": "http://localhost:1420",
-		"beforeBuildCommand": "bun run build",
-		"frontendDist": "../dist"
+		"frontendDist": "../.next",
+		"devUrl": "http://localhost:3000",
+		"beforeDevCommand": "npm run dev",
+		"beforeBuildCommand": "npm run build"
 	},
 	"app": {
 		"windows": [
 			{
-				"title": "feframework",
+				"title": "next-tauri",
 				"width": 800,
-				"height": 600
+				"height": 600,
+				"resizable": true,
+				"fullscreen": false
 			}
 		],
 		"security": {
@@ -30,5 +32,6 @@
 			"icons/icon.icns",
 			"icons/icon.ico"
 		]
-	}
+	},
+	"$schema": "../node_modules/@tauri-apps/cli/schema.json"
 }
